@@ -11,7 +11,13 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+
+# Sensitive variables such as the SECRET_KEY and database credentials are loaded
+# from a env.py file. This file should never be added to version control. If you
+# are setting up the project for the first time, this file will need to be created.
 from pcwebsite.settings.env import *
+
+
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -70,9 +76,9 @@ WSGI_APPLICATION = 'pcwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-# Database info pulled in from file .env file to prevent development db password from
+# Database info pulled in from file env.py to prevent development db password from
 # being committed. If you are setting up a local development environment for the
-# first time you will need to create the .env file. See the ReadMe for details.
+# first time you will need to create the env.py file. See the ReadMe for details.
 
 
 DATABASES = {
