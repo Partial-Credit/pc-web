@@ -23,3 +23,11 @@ These instructions assume you are running Ubuntu Linux 16.0.4+ or your own perso
   $ source /usr/local/bin/virtualenvwrapper.sh
   $ mkvirtualenv pc-web
   ```
+ * After installing and creating the virtual environment your terminal should have (pc-web) displayed before your terminal username and machine name such as `(pc-web) alex@<computer-name>: $` This means you have created a virtual enviroment and have it active or are "working inside it". 
+  
+ * To exit the virtual environment run `deactivate` or exit the terminal window and your terminal should return to normal. To enter back into the environment run `workon pc-web`
+ * If you installed virtualenvwrapper ensure you have the `pc-web` environment active before continuing. 
+ 
+#### Django 2.0
+  * Django is the webframework the website is built on. After installing everything you should read about it on their [website](https://www.djangoproject.com/) to get a general idea and then dive into their exellent [documentation](https://docs.djangoproject.com/en/2.0/). 
+  * Install by running `pip install Django` with your virtual environment active
