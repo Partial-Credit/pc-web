@@ -53,7 +53,10 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*.cover
+*.cover.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 .hypothesis/
 
 # Translations
@@ -93,7 +96,10 @@ celerybeat-schedule
 .env
 env.py
 
-# virtualenv
+# virtualenv.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
 .venv
 venv/
 ENV/
@@ -110,3 +116,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# SASS
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map
