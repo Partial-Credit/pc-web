@@ -5,22 +5,82 @@ body {
   background-color: #1A1A1A;
   font-size: 16px; }
 
+main {
+  min-height: 80vh; }
+
 #page-container {
   color: #bbb; }
 
-.navbar-brand {
-  transform: translateX(-50%);
-  left: 50%;
-  position: absolute; }
+.navbar {
+  display: inline-flex; }
 
-/* DEMO example styles for logo image */
-.navbar-brand {
-  padding: 0px; }
+.nav-logo {
+  display: none; }
+  @media (min-width: 768px) {
+    .nav-logo {
+      display: inline-block; } }
+  .nav-logo img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 200px;
+    height: auto;
+    margin-top: 1em; }
 
-.navbar-brand > img {
-  padding: 0px;
-  width: 30%;
-  height: 30%; }
+.ribbon {
+  display: inline-flex;
+  width: 100%; }
+  @media (min-width: 768px) {
+    .ribbon {
+      width: auto; } }
+
+.ribbon:after, .ribbon:before {
+  margin-top: 0.5em;
+  content: "";
+  float: left;
+  border: 1.5em solid #3FBFB6; }
+
+.ribbon:after {
+  border-right-color: transparent; }
+
+.ribbon:before {
+  border-left-color: transparent; }
+
+.ribbon a:link, .ribbon a:visited {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  float: left;
+  height: 3.5em;
+  overflow: hidden; }
+
+.ribbon span {
+  background: #3FBFB6;
+  display: inline-block;
+  line-height: 3em;
+  padding: 0 1em;
+  margin-top: 0.5em;
+  position: relative;
+  transition: background-color 0.2s, margin-top 0.2s; }
+
+.ribbon a:hover span {
+  background: #5dcac2;
+  margin-top: 0; }
+
+.ribbon span:before {
+  content: "";
+  position: absolute;
+  top: 3em;
+  left: 0;
+  border-right: 0.5em solid #155d54;
+  border-bottom: 0.5em solid #3FBFB6; }
+
+.ribbon span:after {
+  content: "";
+  position: absolute;
+  top: 3em;
+  right: 0;
+  border-left: 0.5em solid #155d54;
+  border-bottom: 0.5em solid #3FBFB6; }
 
 /* Sticky footer styles
 -------------------------------------------------- */

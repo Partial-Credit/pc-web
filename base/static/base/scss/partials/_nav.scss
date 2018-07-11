@@ -1,38 +1,122 @@
 
-
-.navbar-brand {
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    // @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-    //     $logo-scale: 0.3;
-    //     margin-left: (-300 * $logo-scale / 2)+5+px !important; // 50% of logo width
-    // }
-    // @media (min-width: $screen-md-min) {
-    //     $logo-scale: 0.3;  //Use this value to change the scaling of the image
-    //     margin-left: (-300 * $logo-scale / 2)+5+px !important; // 50% of logo width
-    // }
+.navbar {
+    display: inline-flex;
+    // background-color: $pc-teal
 }
 
-/* DEMO example styles for logo image */
-.navbar-brand {
-    padding: 0px;
-}
-.navbar-brand>img {
-    padding: 0px;
-    width: percentage(0.3);
-    height: percentage(0.3);
+
+.nav-logo {
+    display: none;
+    @media (min-width: $screen-sm-min) {
+        display: inline-block;
+    }
+
+    img {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 200px;
+        height: auto;
+        margin-top: 1em;
+
+    }
 }
 
-.navbar-nav {
-    //Default behavior for small screens
-    // background-color: #eee;
-    // padding: 5px;
-    //
-    // @media (min-width: $screen-sm-min) {
-    //     background-color: $pc-teal;
-    //
-    //     border-radius: 3px;
-    // }
+
+.ribbon {
+	// display:inline-block;
+    display:inline-flex;
+    width: 100%;
+    @media (min-width: $screen-sm-min) {
+        width: auto;
+    }
+}
+
+.ribbon:after, .ribbon:before {
+	margin-top:0.5em;
+	content: "";
+	float:left;
+	border:1.5em solid $pc-teal;
+}
+
+.ribbon:after {
+	border-right-color:transparent;
+}
+
+.ribbon:before {
+	border-left-color:transparent;
+}
+
+.ribbon a:link, .ribbon a:visited {
+	color:#fff;
+    font-weight: bold;
+	text-decoration:none;
+    float:left;
+    height:3.5em;
+	overflow:hidden;
+}
+
+.ribbon span {
+	background: $pc-teal;
+	display:inline-block;
+	line-height:3em;
+	padding:0 1em;
+	margin-top:0.5em;
+	position:relative;
+	transition: background-color 0.2s, margin-top 0.2s;
+}
+
+.ribbon a:hover span {
+	background: $pc-light-teal;
+	margin-top:0;
+}
+
+.ribbon span:before {
+	content: "";
+	position:absolute;
+	top:3em;
+	left:0;
+	border-right:0.5em solid darken($pc-dark-teal, 10%);
+	border-bottom:0.5em solid $pc-teal;
+}
+
+.ribbon span:after {
+	content: "";
+	position:absolute;
+	top:3em;
+	right:0;
+	border-left:0.5em solid darken($pc-dark-teal, 10%);
+	border-bottom:0.5em solid $pc-teal;
+}
+
+
+.nav-left {
 
 }
+
+.nav-right {
+
+}
+
+//
+// /* DEMO example styles for logo image */
+// .navbar-brand {
+//     padding: 0px;
+// }
+// .navbar-brand>img {
+//     padding: 0px;
+//     width: percentage(0.3);
+//     height: percentage(0.3);
+// }
+//
+// .navbar-nav {
+//     //Default behavior for small screens
+//     // background-color: #eee;
+//     // padding: 5px;
+//     //
+//     // @media (min-width: $screen-sm-min) {
+//     //     background-color: $pc-teal;
+//     //
+//     //     border-radius: 3px;
+//     // }
+//
+// }
