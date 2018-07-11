@@ -1,13 +1,20 @@
 
 .navbar {
-    display: inline-flex;
-    // background-color: $pc-teal
+    display: inline-flex; //Override Boostrap default
+    padding: 0px;         //Override Boostrap default
+}
+
+.nav-link {
+    padding: 0rem;  //Override for Boostrap default
 }
 
 
+
 .nav-logo {
-    display: none;
-    @media (min-width: $screen-sm-min) {
+    display: none;  //Hide the logo on mobile devices
+
+    // Show the logo on larger screens
+    @media (min-width: $screen-sm-max) {
         display: inline-block;
     }
 
@@ -16,14 +23,16 @@
         margin-right: 20px;
         width: 200px;
         height: auto;
-        margin-top: 1em;
+        margin-top: 0.75em;
 
     }
 }
 
 
+
 .ribbon {
 	// display:inline-block;
+    // background-color: $pc-teal;
     display:inline-flex;
     width: 100%;
     @media (min-width: $screen-sm-min) {
@@ -59,7 +68,8 @@
 	background: $pc-teal;
 	display:inline-block;
 	line-height:3em;
-	padding:0 1em;
+	// padding:0 26px;
+    padding: auto;
 	margin-top:0.5em;
 	position:relative;
 	transition: background-color 0.2s, margin-top 0.2s;
@@ -90,11 +100,18 @@
 
 
 .nav-left {
-
+    // width: 399;
+    span {
+        padding:0 32.5px;
+    }
 }
 
 .nav-right {
-
+    // width: 393px;
+    span {
+        width: 112px;
+        text-align: center;
+    }
 }
 
 //

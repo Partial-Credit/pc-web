@@ -1,9 +1,8 @@
 // Colors
-
-$pc-teal:       #3FBFB6;
-$pc-dark-teal:  #1E877A;
-$pc-medium-teal: lighten($pc-dark-teal, 8%);
-$pc-light-teal: lighten($pc-teal, 8%);
+$pc-teal:       #00BCB5;
+$pc-dark-teal:  darken($pc-teal, 10%);
+$pc-medium-teal: darken($pc-dark-teal, 6%);
+$pc-light-teal: lighten($pc-teal, 6%);
 
 $pc-dark-gray:  #1A1A1A;
 $pc-gray:       #333333;

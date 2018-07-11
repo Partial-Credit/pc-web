@@ -6,17 +6,21 @@ body {
   font-size: 16px; }
 
 main {
-  min-height: 80vh; }
+  min-height: 65vh; }
 
 #page-container {
   color: #bbb; }
 
 .navbar {
-  display: inline-flex; }
+  display: inline-flex;
+  padding: 0px; }
+
+.nav-link {
+  padding: 0rem; }
 
 .nav-logo {
   display: none; }
-  @media (min-width: 768px) {
+  @media (min-width: 991px) {
     .nav-logo {
       display: inline-block; } }
   .nav-logo img {
@@ -24,7 +28,7 @@ main {
     margin-right: 20px;
     width: 200px;
     height: auto;
-    margin-top: 1em; }
+    margin-top: 0.75em; }
 
 .ribbon {
   display: inline-flex;
@@ -37,7 +41,7 @@ main {
   margin-top: 0.5em;
   content: "";
   float: left;
-  border: 1.5em solid #3FBFB6; }
+  border: 1.5em solid #00BCB5; }
 
 .ribbon:after {
   border-right-color: transparent; }
@@ -54,16 +58,16 @@ main {
   overflow: hidden; }
 
 .ribbon span {
-  background: #3FBFB6;
+  background: #00BCB5;
   display: inline-block;
   line-height: 3em;
-  padding: 0 1em;
+  padding: auto;
   margin-top: 0.5em;
   position: relative;
   transition: background-color 0.2s, margin-top 0.2s; }
 
 .ribbon a:hover span {
-  background: #5dcac2;
+  background: #00dbd2;
   margin-top: 0; }
 
 .ribbon span:before {
@@ -71,16 +75,23 @@ main {
   position: absolute;
   top: 3em;
   left: 0;
-  border-right: 0.5em solid #155d54;
-  border-bottom: 0.5em solid #3FBFB6; }
+  border-right: 0.5em solid #005653;
+  border-bottom: 0.5em solid #00BCB5; }
 
 .ribbon span:after {
   content: "";
   position: absolute;
   top: 3em;
   right: 0;
-  border-left: 0.5em solid #155d54;
-  border-bottom: 0.5em solid #3FBFB6; }
+  border-left: 0.5em solid #005653;
+  border-bottom: 0.5em solid #00BCB5; }
+
+.nav-left span {
+  padding: 0 32.5px; }
+
+.nav-right span {
+  width: 112px;
+  text-align: center; }
 
 /* Sticky footer styles
 -------------------------------------------------- */
@@ -94,6 +105,7 @@ html {
   /* Set the fixed height of the footer here */
   line-height: 60px;
   /* Vertically center the text there */
-  background-color: #f5f5f5; }
+  background-color: #008984;
+  color: #fefefe; }
 
 /*# sourceMappingURL=style.css.map */
