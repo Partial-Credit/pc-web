@@ -1,10 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-Partial Credit Website<br>
-
-Logged in as: {{ request.user.username }}.
-
+Logged in as: {{ request.user.username | default:"N/A"}}
 
 
 {% endblock %}
