@@ -6,14 +6,15 @@
 .navbar {
     // background-color: $pc-gray;
     border-bottom: 3px $pc-gray solid;
+
     @media (min-width: $screen-sm-max) {
         display: inline-flex; //Override Boostrap default
         padding: 0px;         //Override Boostrap default
+        border-bottom: none;
     }
 }
 
 .navbar-brand {
-
     // Hide the text brand on medium+ screens
     @media (min-width: $screen-md-min) {
         display: none;
@@ -49,18 +50,17 @@
         width: 200px;
         height: auto;
         margin-top: 0.75em;
-
     }
 }
 
 .nav-left, .nav-right {
     span {
+        text-align: center;
+
         // Only set the width of each item on medium+ screens
         @media (min-width: $screen-sm-max) {
             width: 111px;
         }
-        text-align: center;
-
     }
 }
 

@@ -20,6 +20,8 @@ import django_cas_ng.views as cas_views
 
 urlpatterns = [
     path('', include('home.urls')),
+    path('about/', include('about.urls')),
+    
     path('admin/', admin.site.urls),
     path('login/', cas_views.login, name='cas_ng_login'),
     path('logout/', cas_views.logout, name='cas_ng_logout'),

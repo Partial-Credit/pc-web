@@ -16,7 +16,8 @@ main {
   @media (min-width: 767.98px) {
     .navbar {
       display: inline-flex;
-      padding: 0px; } }
+      padding: 0px;
+      border-bottom: none; } }
 
 @media (min-width: 768px) {
   .navbar-brand {
