@@ -1,20 +1,45 @@
+////////////////////////////////////////////
+//
+// Styles for the base website nav bar
+//
 
 .navbar {
-    display: inline-flex; //Override Boostrap default
-    padding: 0px;         //Override Boostrap default
+    // background-color: $pc-gray;
+    border-bottom: 3px $pc-gray solid;
+    @media (min-width: $screen-sm-max) {
+        display: inline-flex; //Override Boostrap default
+        padding: 0px;         //Override Boostrap default
+    }
+}
+
+.navbar-brand {
+
+    // Hide the text brand on medium+ screens
+    @media (min-width: $screen-md-min) {
+        display: none;
+    }
 }
 
 .nav-link {
-    padding: 0rem;  //Override for Boostrap default
+    padding: 0;  //Override for Boostrap default
+    // @media (min-width: $screen-sm-max) {
+    //     padding: 0rem;  //Override for Boostrap default
+    // }
 }
 
-
+.nav-left-second {
+    visibility: visible;
+    @media (min-width: $screen-sm-max) {
+        display: none;
+        visibility: hidden;
+    }
+}
 
 .nav-logo {
     display: none;  //Hide the logo on mobile devices
 
-    // Show the logo on larger screens
-    @media (min-width: $screen-sm-max) {
+    // Only show the logo on medium+ screens
+    @media (min-width: $screen-md-min) {
         display: inline-block;
     }
 
@@ -28,45 +53,89 @@
     }
 }
 
+.nav-left, .nav-right {
+    span {
+        // Only set the width of each item on medium+ screens
+        @media (min-width: $screen-sm-max) {
+            width: 111px;
+        }
+        text-align: center;
+
+    }
+}
+
+.nav-left {
+    // width: 399;
+}
+
+.nav-right {
+    visibility: visible;
+
+    // Hide the right navbar content on small screens to make the expanding
+    // mobile menu work nicely
+    @media (max-width: $screen-sm-max) {
+        display: none;
+        visibility: hidden;
+    }
+}
 
 
+
+////////////////////////////////////////////
+//
+// Start of Ribbon specific decoration
+//
 .ribbon {
 	// display:inline-block;
     // background-color: $pc-teal;
     display:inline-flex;
     width: 100%;
-    @media (min-width: $screen-sm-min) {
+
+    // On larger screens don't use full width
+    @media (min-width: $screen-md-min) {
         width: auto;
     }
 }
 
-.ribbon:after, .ribbon:before {
-	margin-top:0.5em;
-	content: "";
-	float:left;
-	border:1.5em solid $pc-teal;
-}
+// Only show ribbon tails on medium+ screens
+@media (min-width: $screen-md-min) {
+    .ribbon:after, .ribbon:before {
+    	margin-top:0.5em;
+    	content: "";
+    	float:left;
+    	border:1.5em solid $pc-teal;
+    }
 
-.ribbon:after {
-	border-right-color:transparent;
-}
+    .ribbon:after {
+    	border-right-color:transparent;
+    }
 
-.ribbon:before {
-	border-left-color:transparent;
+    .ribbon:before {
+    	border-left-color:transparent;
+    }
 }
 
 .ribbon a:link, .ribbon a:visited {
 	color:#fff;
     font-weight: bold;
 	text-decoration:none;
-    float:left;
-    height:3.5em;
+    // float:right;
+    @media (min-width: $screen-md-min) {
+        height:3.5em;
+    }
 	overflow:hidden;
 }
 
 .ribbon span {
-	background: $pc-teal;
-	display:inline-block;
+    background-color: $pc-teal;
+    // Only show hover effects on medium+ screens
+    @media (min-width: $screen-md-min) {
+       background: $pc-teal;
+    }
+
+    @media (min-width: $screen-sm-max) {
+        display: inline-block;
+    }
 	line-height:3em;
 	// padding:0 26px;
     padding: auto;
@@ -75,65 +144,31 @@
 	transition: background-color 0.2s, margin-top 0.2s;
 }
 
-.ribbon a:hover span {
-	background: $pc-light-teal;
-	margin-top:0;
-}
-
-.ribbon span:before {
-	content: "";
-	position:absolute;
-	top:3em;
-	left:0;
-	border-right:0.5em solid darken($pc-dark-teal, 10%);
-	border-bottom:0.5em solid $pc-teal;
-}
-
-.ribbon span:after {
-	content: "";
-	position:absolute;
-	top:3em;
-	right:0;
-	border-left:0.5em solid darken($pc-dark-teal, 10%);
-	border-bottom:0.5em solid $pc-teal;
-}
-
-
-.nav-left {
-    // width: 399;
-    span {
-        padding:0 32.5px;
+// Only show hover effects on medium+ screens
+@media (min-width: $screen-md-min) {
+    .ribbon a:hover span {
+    	background: $pc-light-teal;
+    	margin-top:0;
     }
 }
 
-.nav-right {
-    // width: 393px;
-    span {
-        width: 112px;
-        text-align: center;
+// Only show nav item decoration on medium+ screens
+@media (min-width: $screen-md-min) {
+    .ribbon span:before {
+    	content: "";
+    	position:absolute;
+    	top:3em;
+    	left:0;
+    	border-right:0.5em solid darken($pc-dark-teal, 10%);
+    	border-bottom:0.5em solid $pc-teal;
+    }
+
+    .ribbon span:after {
+    	content: "";
+    	position:absolute;
+    	top:3em;
+    	right:0;
+    	border-left:0.5em solid darken($pc-dark-teal, 10%);
+    	border-bottom:0.5em solid $pc-teal;
     }
 }
-
-//
-// /* DEMO example styles for logo image */
-// .navbar-brand {
-//     padding: 0px;
-// }
-// .navbar-brand>img {
-//     padding: 0px;
-//     width: percentage(0.3);
-//     height: percentage(0.3);
-// }
-//
-// .navbar-nav {
-//     //Default behavior for small screens
-//     // background-color: #eee;
-//     // padding: 5px;
-//     //
-//     // @media (min-width: $screen-sm-min) {
-//     //     background-color: $pc-teal;
-//     //
-//     //     border-radius: 3px;
-//     // }
-//
-// }

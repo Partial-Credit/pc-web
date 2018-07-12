@@ -14,12 +14,17 @@ $nav-bar-height:  40px;
 
 
 // Media Query Breakpoints (Pulled from the Bootstrap files for ease of use)
-$screen-sm-min:              768px !default;
-$screen-md-min:              992px !default;
-$screen-lg-min:              1200px !default;
+$screen-sm-min:              576px !default;
+$screen-md-min:              768px !default;
+$screen-lg-min:              992px !default;
+
+// $screen-sm-min:              768px !default;
+// $screen-md-min:              992px !default;
+// $screen-lg-min:              1200px !default;
 
 
 // So media queries don't overlap when required, provide a maximum
-$screen-xs-max:              ($screen-sm-min - 1) !default;
-$screen-sm-max:              ($screen-md-min - 1) !default;
-$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-xs-max:              (575.98px) !default;
+$screen-sm-max:              (767.98px) !default;
+$screen-md-max:              (991.98px) !default;
+$screen-lg-max:              (1199.98px) !default;

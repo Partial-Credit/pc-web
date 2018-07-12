@@ -12,15 +12,29 @@ main {
   color: #bbb; }
 
 .navbar {
-  display: inline-flex;
-  padding: 0px; }
+  border-bottom: 3px #333333 solid; }
+  @media (min-width: 767.98px) {
+    .navbar {
+      display: inline-flex;
+      padding: 0px; } }
+
+@media (min-width: 768px) {
+  .navbar-brand {
+    display: none; } }
 
 .nav-link {
-  padding: 0rem; }
+  padding: 0; }
+
+.nav-left-second {
+  visibility: visible; }
+  @media (min-width: 767.98px) {
+    .nav-left-second {
+      display: none;
+      visibility: hidden; } }
 
 .nav-logo {
   display: none; }
-  @media (min-width: 991px) {
+  @media (min-width: 768px) {
     .nav-logo {
       display: inline-block; } }
   .nav-logo img {
@@ -30,6 +44,19 @@ main {
     height: auto;
     margin-top: 0.75em; }
 
+.nav-left span, .nav-right span {
+  text-align: center; }
+  @media (min-width: 767.98px) {
+    .nav-left span, .nav-right span {
+      width: 111px; } }
+
+.nav-right {
+  visibility: visible; }
+  @media (max-width: 767.98px) {
+    .nav-right {
+      display: none;
+      visibility: hidden; } }
+
 .ribbon {
   display: inline-flex;
   width: 100%; }
@@ -37,62 +64,61 @@ main {
     .ribbon {
       width: auto; } }
 
-.ribbon:after, .ribbon:before {
-  margin-top: 0.5em;
-  content: "";
-  float: left;
-  border: 1.5em solid #00BCB5; }
+@media (min-width: 768px) {
+  .ribbon:after, .ribbon:before {
+    margin-top: 0.5em;
+    content: "";
+    float: left;
+    border: 1.5em solid #00BCB5; }
 
-.ribbon:after {
-  border-right-color: transparent; }
+  .ribbon:after {
+    border-right-color: transparent; }
 
-.ribbon:before {
-  border-left-color: transparent; }
-
+  .ribbon:before {
+    border-left-color: transparent; } }
 .ribbon a:link, .ribbon a:visited {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  float: left;
-  height: 3.5em;
   overflow: hidden; }
+  @media (min-width: 768px) {
+    .ribbon a:link, .ribbon a:visited {
+      height: 3.5em; } }
 
 .ribbon span {
-  background: #00BCB5;
-  display: inline-block;
+  background-color: #00BCB5;
   line-height: 3em;
   padding: auto;
   margin-top: 0.5em;
   position: relative;
   transition: background-color 0.2s, margin-top 0.2s; }
+  @media (min-width: 768px) {
+    .ribbon span {
+      background: #00BCB5; } }
+  @media (min-width: 767.98px) {
+    .ribbon span {
+      display: inline-block; } }
 
-.ribbon a:hover span {
-  background: #00dbd2;
-  margin-top: 0; }
+@media (min-width: 768px) {
+  .ribbon a:hover span {
+    background: #00dbd2;
+    margin-top: 0; } }
+@media (min-width: 768px) {
+  .ribbon span:before {
+    content: "";
+    position: absolute;
+    top: 3em;
+    left: 0;
+    border-right: 0.5em solid #005653;
+    border-bottom: 0.5em solid #00BCB5; }
 
-.ribbon span:before {
-  content: "";
-  position: absolute;
-  top: 3em;
-  left: 0;
-  border-right: 0.5em solid #005653;
-  border-bottom: 0.5em solid #00BCB5; }
-
-.ribbon span:after {
-  content: "";
-  position: absolute;
-  top: 3em;
-  right: 0;
-  border-left: 0.5em solid #005653;
-  border-bottom: 0.5em solid #00BCB5; }
-
-.nav-left span {
-  padding: 0 32.5px; }
-
-.nav-right span {
-  width: 112px;
-  text-align: center; }
-
+  .ribbon span:after {
+    content: "";
+    position: absolute;
+    top: 3em;
+    right: 0;
+    border-left: 0.5em solid #005653;
+    border-bottom: 0.5em solid #00BCB5; } }
 /* Sticky footer styles
 -------------------------------------------------- */
 html {

@@ -2,21 +2,38 @@
 
 <div class="container">
     <nav>
-    <div class='ribbon navbar align-middle nav-left'>
 
-		<a class="nav-item nav-justified" href='/'><span class="nav-link">Home</span></a>
-		<a class="nav-item nav-justified" href='#'><span class="nav-link">About</span></a>
-        <a class="nav-item nav-justified" href='#'><span class="nav-link">Media</span></a>
+
+    <div class='ribbon navbar navbar-expand-md align-middle nav-left'>
+
+        <a class="navbar-brand align-middle" href="/">Partial Credit</a>
+        <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar01" aria-controls="navbar01" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-toggler-icon"></div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar01">
+    		<a class="nav-item nav-justified" href='/'><span class="nav-link">Home</span></a>
+    		<a class="nav-item nav-justified" href='#'><span class="nav-link">About</span></a>
+            <a class="nav-item nav-justified" href='#'><span class="nav-link">Media</span></a>
+
+            <div class="nav-left-second">
+                <a class="nav-item nav-justified" href='#'><span class="nav-link">Auditions</span></a>
+        		<a class="nav-item nav-justified" href='#'><span class="nav-link">Contact</span></a>
+                <a class="nav-item nav-justified" href='/login'><span class="nav-link">Login</span></a>
+            </div>
+        </div>
     </div>
 
     <div class="nav-logo">
         <a href ="/"><img class="logo-image" src="{% static "base/logos/logo-nav.png" %}" alt="Partial Credit"></a>
     </div>
 
-    <div class='ribbon navbar align-middle nav-right'>
-		<a class="nav-item nav-justified" href='#'><span class="nav-link">Auditions</span></a>
-		<a class="nav-item nav-justified" href='#'><span class="nav-link">Contact</span></a>
-        <a class="nav-item nav-justified" href='/login'><span class="nav-link">Login</span></a>
+    <div class='ribbon navbar navbar-expand-md align-middle nav-right'>
+        <div class="collapse navbar-collapse" id="navbar02">
+    		<a class="nav-item nav-justified" href='#'><span class="nav-link">Auditions</span></a>
+    		<a class="nav-item nav-justified" href='#'><span class="nav-link">Contact</span></a>
+            <a class="nav-item nav-justified" href='/login'><span class="nav-link">Login</span></a>
+        </div>
     </div>
     </nav>
 </div>
