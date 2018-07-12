@@ -35,21 +35,35 @@ main {
 
 .nav-logo {
   display: none; }
-  @media (min-width: 768px) {
-    .nav-logo {
-      display: inline-block; } }
   .nav-logo img {
     margin-left: 20px;
     margin-right: 20px;
     width: 200px;
     height: auto;
     margin-top: 0.75em; }
+  @media (min-width: 768px) {
+    .nav-logo {
+      display: inline-block; } }
+  @media (max-width: 1199.98px) {
+    .nav-logo img {
+      width: 170px; } }
+  @media (max-width: 991.98px) {
+    .nav-logo img {
+      width: 90px;
+      margin-left: 0px;
+      margin-right: 0px; } }
 
 .nav-left span, .nav-right span {
   text-align: center; }
   @media (min-width: 767.98px) {
     .nav-left span, .nav-right span {
       width: 111px; } }
+  @media (min-width: 767.98px) and (max-width: 1199.98px) {
+    .nav-left span, .nav-right span {
+      width: 86px; } }
+  @media (min-width: 767.98px) and (max-width: 991.98px) {
+    .nav-left span, .nav-right span {
+      width: 66px; } }
 
 .nav-right {
   visibility: visible; }
