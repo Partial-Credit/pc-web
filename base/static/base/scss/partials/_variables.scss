@@ -17,6 +17,7 @@ $nav-bar-height:  40px;
 $screen-sm-min:              576px !default;
 $screen-md-min:              768px !default;
 $screen-lg-min:              992px !default;
+$screen-xl-min:              1200px !default;
 
 // $screen-sm-min:              768px !default;
 // $screen-md-min:              992px !default;
@@ -28,3 +29,4 @@ $screen-xs-max:              (575.98px) !default;
 $screen-sm-max:              (767.98px) !default;
 $screen-md-max:              (991.98px) !default;
 $screen-lg-max:              (1199.98px) !default;
+$screen-xl-max:              99999999999999999px !default;

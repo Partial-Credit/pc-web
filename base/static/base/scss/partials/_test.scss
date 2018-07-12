@@ -1,0 +1,37 @@
+%test-style {
+    color: #fff;
+    background-color: red;
+    margin: 3px;
+    padding: 10px;
+}
+
+.test-small {
+    @extend %test-style;
+    display: none;
+    @media (max-width: $screen-sm-max) {
+        display: block;
+    }
+}
+
+.test-medium {
+    @extend %test-style;
+    display: none;
+    @media (max-width: $screen-md-max) {
+        display: block;
+    }
+}
+
+.test-large {
+    @extend %test-style;
+    display: none;
+    @media (max-width: $screen-lg-max) {
+        display: block;
+    }
+}
+.test-xlarge {
+    @extend %test-style;
+    display: none;
+    @media (max-width: $screen-xl-max) {
+        display: block;
+    }
+}
