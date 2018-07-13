@@ -63,12 +63,17 @@ MIDDLEWARE = [
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'django_cas_ng.backends.CASBackend',
+    'pcwebsite.backends.CustomCASBackend',
+    # 'django_cas_ng.backends.CASBackend',
 )
 
 CAS_SERVER_URL = 'https://cas-auth.rpi.edu/cas/'
 CAS_VERSION = '3'
 CAS_FORCE_CHANGE_USERNAME_CASE='lower'
+CAS_REDIRECT_URL = '/'
+CAS_LOGOUT_COMPLETELY = False
+CAS_CREATE_USER = False
+
 
 ROOT_URLCONF = 'pcwebsite.urls'
 
@@ -132,6 +137,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'users.Member'
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
