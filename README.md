@@ -44,7 +44,7 @@ These instructions assume you are running Ubuntu Linux 16.0.4+ or your own perso
   * Now that you have postgres installed you'll need to create a database and configure it with a login and password.
   * To log into an interactive Postgres session run `sudo -u postgres psql` . This should give you a `postgress=# ` prompt in your terminal. 
   * Now we will create a database for the website, run `CREATE DATABASE pcwebsite;`
-  * Next we will create a user who can access the database, run `CREATE USER admin WITH PASSWORD <your password here>;` Make sure you remember the password you create, you will need to add it to the Django settings later. The password will only be used on your local development database.
+  * Next we will create a user who can access the database, run `CREATE USER admin WITH PASSWORD '<your password here>';` Make sure you remember the password you create, you will need to add it to the Django settings later. The password will only be used on your local development database.
   * Now we'll make some tweaks to the database settings and give our admin user access, run each of these commands one line at a time:
   ```
   ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
