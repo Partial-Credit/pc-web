@@ -48,9 +48,9 @@ These instructions assume you are running Ubuntu Linux 16.0.4+ or your own perso
   * Next we will create a user who can access the database, run `CREATE USER admin WITH PASSWORD '<your password here>';` Make sure you remember the password you create, you will need to add it to the Django settings later. The password will only be used on your local development database.
   * Now we'll make some tweaks to the database settings and give our admin user access, run each of these commands one line at a time:
   ```
-  ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
-  ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
-  ALTER ROLE myprojectuser SET timezone TO 'UTC';
+  ALTER ROLE admin SET client_encoding TO 'utf8';
+  ALTER ROLE admin SET default_transaction_isolation TO 'read committed';
+  ALTER ROLE admin SET timezone TO 'UTC';
   GRANT ALL PRIVILEGES ON DATABASE pcwebsite TO admin;
   ```
   * Now that the database is configured you can exit the prompt by typing `\q`
