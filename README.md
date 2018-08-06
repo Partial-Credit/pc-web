@@ -18,7 +18,8 @@ These instructions assume you are running Ubuntu Linux 16.0.4+ or your own perso
 #### Virtualenvwrapper (optional but highly reccomended)
   * [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) is a tool that allows you to easily create Python virtual environments. Using virtual environments while developing python projects allows each project to have it's own isolated version of dependencies you install, preventing conflicts and overlap.
   * Install by running
-  ```$ pip install virtualenvwrapper
+  ```
+  $ pip install virtualenvwrapper
   $ export WORKON_HOME=~/.virtualenvs
   $ source /usr/local/bin/virtualenvwrapper.sh
   $ mkvirtualenv pc-web
