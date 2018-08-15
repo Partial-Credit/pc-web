@@ -38,8 +38,12 @@ class Member(AbstractUser):
         help_text = "Please use the following format: <em>YYYY</em>."
     )
 
+    profile = models.ImageField(blank=True, default='default.png')
+
     def __str__(self):
         return self.username
 
     class Meta:
+        app_label = 'users'
         verbose_name = "Member"
+
