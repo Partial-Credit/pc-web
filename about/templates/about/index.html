@@ -1,7 +1,47 @@
 {% extends 'base/base.html' %}
-
+{% load template_fillers %}
 {% block content %}
-<h1> About page content here.</h1>
-
+	<div class="members_intro">
+		<p>
+			When the lights go out and all hope is lost in the city of Troy,<br> 
+			Partial Credit - RPI's only teal-clad a cappella group - is there.
+			<br><br>Since 2003, Partial Credit has been bm bopping and zun zowing across the Northeast, saving
+			lost souls with the power of music. In addition to performing on and off campus throughout the
+			year, PC regularly competes in the International Championship of Collegiate A Cappella, recently
+			placing 4th in their 2016 Quarterfinal and winning Best Arrangement for the second year in
+			a row. They also host their own show each semester! <br><br>
+			The group is fresh off the release of their newest CD, Simple Harmonic Motion, with
+			ambitious plans in the near future.
+		</p>
+	</div>
+	<div id="members" class = "container-fluid">
+		{% for member_group in members_list%}
+		<div class="row"> 
+			<div class="col-sm">
+				<h2>{{ member_group|getVoicePart }}</h2>
+			</div>	
+		</div>
+		<div class= "row">
+			{% for type, list_member in member_group.items %}
+				{% for member in list_member%}
+				<div class = "col-sm">
+					<div class = "member">
+						<img src = "{{ member.profile.url }}"/>
+						<div class = "member_details">
+							<h2> {{ member.first_name }} {{ member.last_name}}</h2>
+							<p><i> 
+								<span class="member_position">{{ member.position|positionStyle }}</span><br> 
+								{{ member.major }}, Class of {{ member.class_year }} 
+							</i></p>
+							<p class = "bio">{{ member.bio }}</p>
+						</div>
+						<h3> {{ member.nickname}} </h3>
+					</div>
+				</div>
+				{% endfor %}		
+			{% endfor %}
+		</div>
+		{% endfor %}
+	</div>
 
 {% endblock %}

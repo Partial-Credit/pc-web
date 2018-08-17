@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
-
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 import django_cas_ng.views as cas_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('home.urls')),
@@ -27,3 +29,5 @@ urlpatterns = [
     path('accounts/callback', cas_views.callback, name='cas_ng_proxy_callback'),
 
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
