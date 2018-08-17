@@ -1,5 +1,5 @@
 {% extends 'base/base.html' %}
-
+{% load template_fillers %}
 {% block content %}
 	<div class="members_intro">
 		<p>
@@ -14,17 +14,33 @@
 			ambitious plans in the near future.
 		</p>
 	</div>
-	<div class = "members">	
-		{% for member in members %}
-			<div class = "member">
-				<img src = "{{ member.profile.url }}"/>
-				<div class = "member_details">
-					<h2> {{ member.first_name }} {{ member.last_name}}</h2>
-					<p><i> {{ member.major }}, Class of {{ member.class_year }} </i></p>
-					<p>{{ member.bio }}</p>
+	<div id="members" class = "container-fluid">
+		{% for member_group in members_list%}
+		<div class="row"> 
+			<div class="col-sm">
+				<h2>{{ member_group|getVoicePart }}</h2>
+			</div>	
+		</div>
+		<div class= "row">
+			{% for type, list_member in member_group.items %}
+				{% for member in list_member%}
+				<div class = "col-sm">
+					<div class = "member">
+						<img src = "{{ member.profile.url }}"/>
+						<div class = "member_details">
+							<h2> {{ member.first_name }} {{ member.last_name}}</h2>
+							<p><i> 
+								<span class="member_position">{{ member.position|positionStyle }}</span><br> 
+								{{ member.major }}, Class of {{ member.class_year }} 
+							</i></p>
+							<p class = "bio">{{ member.bio }}</p>
+						</div>
+						<h3> {{ member.nickname}} </h3>
+					</div>
 				</div>
-				<h3> {{ member.nickname}} </h3>
-			</div>		
+				{% endfor %}		
+			{% endfor %}
+		</div>
 		{% endfor %}
 	</div>
 

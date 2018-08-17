@@ -2,6 +2,7 @@
 pcwebsite/db_settings.py
 db_settings.py
 
+
 # Migration files
 **/migrations/*
 migrations/*
@@ -122,3 +123,5 @@ ENV/
 *.css.map
 *.sass.map
 *.scss.map
+
+media/

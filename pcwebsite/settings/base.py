@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'base',
     'home',
     'about',
+    'multiselectfield',
 ]
 
 
