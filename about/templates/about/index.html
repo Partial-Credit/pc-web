@@ -25,17 +25,35 @@
 			{% for type, list_member in member_group.items %}
 				{% for member in list_member%}
 				<div class = "col-sm">
-					<div class = "member">
-						<img src = "{{ member.profile.url }}"/>
-						<div class = "member_details">
-							<h2> {{ member.first_name }} {{ member.last_name}}</h2>
-							<p><i> 
-								<span class="member_position">{{ member.position|positionStyle }}</span><br> 
-								{{ member.major }}, Class of {{ member.class_year }} 
-							</i></p>
-							<p class = "bio">{{ member.bio }}</p>
+					<div class = "container member">
+						<div class = "no-gutters row xs-format">
+							<div class = "profile_picture col-sm-5 align-items-center" style  ="background-image: url('{{ member.profile.url }}') ">
+							</div>
+							<div class = "col-sm-7">
+								<div class = "member_details">
+									<h2> {{ member.first_name }} {{ member.last_name}}</h2>
+									<p><i> 
+										<span class="member_position">{{ member.position|positionStyle }}</span>
+										{% if member.position %}
+											<br>
+										{% endif %}
+										{{ member.major }}, Class of {{ member.class_year }} 
+									</i></p>
+									<p>
+										<a class="about btn btn-secondary btn-block d-block d-sm-none" data-toggle="collapse" href="#{{ member.first_name }}_bio" role="button" aria-expanded="false" aria-controls="collapseBio">About</a>
+									</p>	
+									<div class="collapse" id='{{ member.first_name }}_bio'>
+										<p class = "bio">{{ member.bio }}</p>
+									</div>
+ 									<p class = "bio d-none d-sm-block">{{ member.bio }}</p>
+								</div>
+							</div>
 						</div>
-						<h3> {{ member.nickname}} </h3>
+						<div class = "row">
+							<div class = "col-sm-12">
+								<h3> {{ member.nickname}} </h3>
+							</div>
+						</div>
 					</div>
 				</div>
 				{% endfor %}		

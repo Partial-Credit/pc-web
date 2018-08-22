@@ -5,16 +5,16 @@
   background-color: #333;
   text-align: center;
   margin: 50px 0px;
-  padding: 20px 200px;
+  padding: 2% 10%;
   font-size: 1.02em;
 }
 
 .member{
-  display: grid;
-  grid-template-columns: .3fr 1fr ;
   background-color: #333;
   width: 40em;
   margin: 20px 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .member h3{
@@ -27,9 +27,8 @@
 
 .member img{
   object-position: center;
-  width: 15em;
+  height: 20em;
   max-height: 320px;
-  display: block;
 }
 
 .member_details{
@@ -46,3 +45,36 @@
 	justify-content: center;
 	margin-right: 0px;
 } 
+
+.bio{
+	margin-bottom: 0px;
+}
+
+.profile_picture{
+	height: 320px;
+    width: 180px;
+    background-size: cover;
+    background-position: center center;
+}
+
+ @media (max-width: $screen-sm-min) {
+     .xs-format{
+	 	align-items: center;
+	 	justify-content: center;
+	 	text-align: center;
+	 }
+	 .profile_picture{
+	 	width: 100%;
+	 }
+	 .bio{
+	 	text-align: left;
+	 	padding-left: 7%;
+	 }
+	 .about{
+	 	border-radius: 4px;
+	 	width: 100%;
+	 	background-color: $pc-gray;
+	 	font-weight: bold;
+	 	font-color: #bbb;
+	 }
+ }

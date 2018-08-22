@@ -28,5 +28,6 @@ def index(request):
 	members_list = [{"Sopranos":sopranos}, {"Altos":altos}, {"Tenors":tenors}, {"Basses":basses}]
 	for members in members_list:
 		for member in members.values():
-			print(member)
+			for m in member:
+				print(m.position)
 	return render(request, 'about/index.html', {"members_list": members_list})
