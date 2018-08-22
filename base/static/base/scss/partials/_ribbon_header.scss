@@ -1,0 +1,59 @@
+@import 'variables';
+ 
+ .card {
+  margin: 1.5em 0;
+  margin-bottom: 5px;
+  line-height: 34px;
+  position: relative;
+  user-select: none;
+  outline:none !important;
+  width: 7em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  background-color:$pc-medium-teal;
+  border: none;
+  border-radius: 0px; 
+}
+
+.card:active {
+
+  outline:none;
+}
+
+.card.ribbon_header {
+  
+  outline:none;
+  outline-color: transparent;
+}
+.card.ribbon_header:before,
+.card.ribbon_header:after {
+  top: 60%;
+  z-index: -10;
+}
+.card.ribbon_header:before {
+  border-color: $pc-medium-dark-teal $pc-darker-teal $pc-medium-dark-teal transparent;
+  left: -18.4px;
+  border-width: 17px;
+  z-index: -8;
+}
+.card.ribbon_header:after {
+  border-color: $pc-medium-dark-teal transparent $pc-medium-dark-teal $pc-darker-teal;
+  right: -18.4px;
+  border-width: 17px;
+  z-index: -8;
+}
+
+.card:before,
+.card:after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 0;
+  outline:none;
+}

@@ -18,7 +18,7 @@
 		{% for member_group in members_list%}
 		<div class="row"> 
 			<div class="col-sm">
-				<h2>{{ member_group|getVoicePart }}</h2>
+				<h2 class="card ribbon_header voice_part">{{ member_group|getVoicePart }}</h2>
 			</div>	
 		</div>
 		<div class= "row">
@@ -61,5 +61,20 @@
 		</div>
 		{% endfor %}
 	</div>
-
+	<div class="container-fluid gray_background">
+		<div class="no-gutters row">
+			<div class= "col-sm">
+				<h2 class="card ribbon_header">Alumni</h2>
+			</div>
+		</div>
+		<div class="no-gutters row">
+			<div class = "col">
+			<ul style="list-style-type:none">
+				{% for alumni in alumni_list %}
+					<li>{{ alumni.first_name }} {{ alumni.last_name }} <span class="class_year">{{ alumni.class_year }}</span></li>
+				{% endfor %}
+			</ul>
+			</div>		
+		</div>
+	</div>
 {% endblock %}
