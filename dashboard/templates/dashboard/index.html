@@ -1,7 +1,24 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-Welcome {{ request.user.username}}!
 
+<div class="container">
+    Logged in as {{ request.user.username}}
+
+    <br>
+    <h3>Manage Members:</h3>
+    <ul>
+        <li>Manage Member</li>
+        <li>Add Member</li>
+        <li>Remove Member</li>
+    </ul>
+
+    <h3>Manage Website</h3>
+    <ul>
+        <li>User Permissions</li>
+        <li>Contact Form Email</li>
+    </ul>
+
+</div>
 
 {% endblock %}
