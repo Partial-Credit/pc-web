@@ -134,6 +134,18 @@ main {
     right: 0;
     border-left: 0.5em solid #005653;
     border-bottom: 0.5em solid #00BCB5; } }
+.table-sort a {
+  color: #fff; }
+
+.table-members {
+  margin-top: 2em; }
+  .table-members i {
+    font-size: 20px; }
+  .table-members i:hover {
+    color: #00BCB5; }
+  .table-members .fa-trash-alt:hover {
+    color: #dc3545; }
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -224,5 +236,8 @@ a.member-link {
   display: flex;
   justify-content: center;
   margin-right: 0px; }
+
+.btn-dash {
+  color: #fff !important; }
 
 /*# sourceMappingURL=style.css.map */

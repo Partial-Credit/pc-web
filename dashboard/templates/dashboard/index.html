@@ -4,21 +4,19 @@
 
 <div class="container">
     Logged in as {{ request.user.username}}
+    <br>
+
 
     <br>
     <h3>Manage Members:</h3>
-    <ul>
-        <li>Manage Member</li>
-        <li>Add Member</li>
-        <li>Remove Member</li>
-    </ul>
+    <a class="btn btn-primary btn-dash">Edit Member</a>
+    <a class="btn btn-success btn-dash">Add Member</a>
+    <a class="btn btn-danger btn-dash">Remove Member</a>
 
+    <br>
     <h3>Manage Website</h3>
-    <ul>
-        <li>User Permissions</li>
-        <li>Contact Form Email</li>
-    </ul>
-
+    <a class="btn btn-primary btn-dash">Manage Permissions</a>
+    <a class="btn btn-dash btn-primary ">Edit Contact Form Email</a>
 </div>
 
 {% endblock %}

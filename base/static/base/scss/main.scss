@@ -4,6 +4,9 @@
 // Navigation bar
 @import 'partials/nav';
 
+// Table styling
+@import 'partials/tables';
+
 // Page footer
 @import 'partials/footer';
 
@@ -13,4 +16,8 @@
 //about page
 @import 'partials/about';
 
+//Dashboard page
 @import 'partials/dashboard';
+
+//User model pages
+@import 'partials/users';
