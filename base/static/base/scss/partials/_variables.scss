@@ -1,7 +1,9 @@
 // Colors
 $pc-teal:       #00BCB5;
+$pc-medium-teal: darken($pc-teal, 5%);
+$pc-medium-dark-teal: darken($pc-teal, 10%);
 $pc-dark-teal:  darken($pc-teal, 10%);
-$pc-medium-teal: darken($pc-dark-teal, 6%);
+$pc-darker-teal: darken($pc-dark-teal, 6%);
 $pc-light-teal: lighten($pc-teal, 6%);
 
 $pc-dark-gray:  #1A1A1A;

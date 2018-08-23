@@ -13,6 +13,7 @@ def index(request):
 	altos = list()
 	tenors = list()
 	basses = list()
+	alumni = list()
 
 	members = Member.objects.all()
 	for member in members:
@@ -25,8 +26,13 @@ def index(request):
 				tenors.append(member)
 			elif member.voice_part == "B":
 				basses.append(member)
+		else:
+			alumni.append(member)
+	alumni.sort(key=lambda x: x.class_year, reverse=True)
+	print(alumni)	
 	members_list = [{"Sopranos":sopranos}, {"Altos":altos}, {"Tenors":tenors}, {"Basses":basses}]
 	for members in members_list:
 		for member in members.values():
-			print(member)
-	return render(request, 'about/index.html', {"members_list": members_list})
+			for m in member:
+				print(m.position)
+	return render(request, 'about/index.html', {"members_list": members_list, "alumni_list": alumni})

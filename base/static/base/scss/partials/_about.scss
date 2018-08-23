@@ -5,31 +5,32 @@
   background-color: #333;
   text-align: center;
   margin: 50px 0px;
-  padding: 20px 200px;
+  padding: 2% 10%;
   font-size: 1.02em;
+  z-index: 1;
 }
 
 .member{
-  display: grid;
-  grid-template-columns: .3fr 1fr ;
   background-color: #333;
   width: 40em;
   margin: 20px 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .member h3{
   grid-column-start: span 2;
   margin: 0px;
+  color: white;
   background-color: #008984;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .member img{
   object-position: center;
-  width: 15em;
+  height: 20em;
   max-height: 320px;
-  display: block;
 }
 
 .member_details{
@@ -41,8 +42,87 @@
   padding: 0px;
 }
 
+#members.container-fluid{
+	padding-bottom: 3em;
+}
 .col-sm{
 	display: flex;
 	justify-content: center;
 	margin-right: 0px;
 } 
+
+.bio{
+	margin-bottom: 0px;
+}
+
+.profile_picture{
+	height: 320px;
+    width: 180px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.col{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.class_year{
+	float: right;
+	text-align: right;
+}
+
+ul{
+	padding-left: 0px;
+	width: 40%;	
+}
+
+li{
+	width: 100%;
+	font-size: 1.3em;
+}
+
+.gray_background{
+	background-color: $pc-gray;
+}
+
+#font_white{
+  color: white;
+}
+
+ @media (max-width: $screen-sm-min) {
+     ul{
+     	width: 60%
+     }
+     .xs-format{
+	 	align-items: center;
+	 	justify-content: center;
+	 	text-align: center;
+	 }
+	 .profile_picture{
+	 	width: 100%;
+	 }
+	 .bio{
+	 	text-align: left;
+	 	padding-left: 7%;
+	 }
+	 .about{
+	 	border-radius: 4px;
+	 	width: 100%;
+	 	background-color: $pc-gray;
+	 	font-weight: bold;
+	 	font-color: #bbb;
+	 }
+ }
+
+.non-semantic-protector{
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 420px) and (max-width: $screen-sm-min){
+	.profile_picture{
+		height: 30em;
+	}
+}

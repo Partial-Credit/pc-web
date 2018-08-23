@@ -250,31 +250,32 @@ html {
   background-color: #333;
   text-align: center;
   margin: 50px 0px;
-  padding: 20px 200px;
+  padding: 2% 10%;
   font-size: 1.02em;
+  z-index: 1;
 }
 
 .member {
-  display: grid;
-  grid-template-columns: 0.3fr 1fr;
   background-color: #333;
   width: 40em;
   margin: 20px 20px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 .member h3 {
   grid-column-start: span 2;
   margin: 0px;
+  color: white;
   background-color: #008984;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .member img {
   object-position: center;
-  width: 15em;
+  height: 20em;
   max-height: 320px;
-  display: block;
 }
 
 .member_details {
@@ -286,10 +287,149 @@ html {
   padding: 0px;
 }
 
+#members.container-fluid {
+  padding-bottom: 3em;
+}
+
 .col-sm {
   display: flex;
   justify-content: center;
   margin-right: 0px;
+}
+
+.bio {
+  margin-bottom: 0px;
+}
+
+.profile_picture {
+  height: 320px;
+  width: 180px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class_year {
+  float: right;
+  text-align: right;
+}
+
+ul {
+  padding-left: 0px;
+  width: 40%;
+}
+
+li {
+  width: 100%;
+  font-size: 1.3em;
+}
+
+.gray_background {
+  background-color: #333333;
+}
+
+#font_white {
+  color: white;
+}
+
+@media (max-width: 576px) {
+  ul {
+    width: 60%;
+  }
+
+  .xs-format {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .profile_picture {
+    width: 100%;
+  }
+
+  .bio {
+    text-align: left;
+    padding-left: 7%;
+  }
+
+  .about {
+    border-radius: 4px;
+    width: 100%;
+    background-color: #333333;
+    font-weight: bold;
+    font-color: #bbb;
+  }
+}
+.non-semantic-protector {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 420px) and (max-width: 576px) {
+  .profile_picture {
+    height: 30em;
+  }
+}
+.card {
+  margin: 1.5em 0;
+  line-height: 34px;
+  position: relative;
+  user-select: none;
+  outline: none !important;
+  width: 10em;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  background-color: #00a39c;
+  border: none;
+  border-radius: 0px;
+}
+
+.card:active {
+  outline: none;
+}
+
+.card.ribbon_header {
+  outline: none;
+  outline-color: transparent;
+}
+
+.card.ribbon_header:before,
+.card.ribbon_header:after {
+  top: 60%;
+  z-index: -10;
+}
+
+.card.ribbon_header:before {
+  border-color: #008984 #006a66 #008984 transparent;
+  left: -18.4px;
+  border-width: 17px;
+}
+
+.card.ribbon_header:after {
+  border-color: #008984 transparent #008984 #006a66;
+  right: -18.4px;
+  border-width: 17px;
+}
+
+.card:before,
+.card:after {
+  content: "";
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-width: 0;
+  outline: none;
 }
 
 /*# sourceMappingURL=style.css.map */
