@@ -53,10 +53,14 @@ class Member(AbstractUser):
 
     profile = models.ImageField(blank=True, default='default.png')
 
+    hidden = models.BooleanField(default=False)
+
     def __str__(self):
         return self.username
 
     class Meta:
         app_label = 'users'
         verbose_name = "Member"
-
+        permissions = [
+            ('change_other_member', 'can change other users'),
+        ]
