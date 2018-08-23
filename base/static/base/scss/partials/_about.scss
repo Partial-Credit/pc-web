@@ -21,9 +21,10 @@
 .member h3{
   grid-column-start: span 2;
   margin: 0px;
+  color: white;
   background-color: #008984;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 
 .member img{
@@ -41,6 +42,9 @@
   padding: 0px;
 }
 
+#members.container-fluid{
+	padding-bottom: 3em;
+}
 .col-sm{
 	display: flex;
 	justify-content: center;
@@ -58,17 +62,39 @@
     background-position: center center;
 }
 
+.col{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .class_year{
 	float: right;
 	text-align: right;
 }
 
-li{
-	width: 100%;
+ul{
+	padding-left: 0px;
+	width: 40%;	
 }
 
+li{
+	width: 100%;
+	font-size: 1.3em;
+}
+
+.gray_background{
+	background-color: $pc-gray;
+}
+
+#font_white{
+  color: white;
+}
 
  @media (max-width: $screen-sm-min) {
+     ul{
+     	width: 60%
+     }
      .xs-format{
 	 	align-items: center;
 	 	justify-content: center;
@@ -89,6 +115,11 @@ li{
 	 	font-color: #bbb;
 	 }
  }
+
+.non-semantic-protector{
+  position: relative;
+  z-index: 1;
+}
 
 @media (min-width: 420px) and (max-width: $screen-sm-min){
 	.profile_picture{

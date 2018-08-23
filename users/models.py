@@ -54,7 +54,7 @@ class Member(AbstractUser):
     profile = models.ImageField(blank=True, default='default.png')
 
     def __str__(self):
-        return self.username
+        return str(self.first_name) + " " + str(self.last_name)
 
     class Meta:
         app_label = 'users'

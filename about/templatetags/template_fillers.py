@@ -10,3 +10,7 @@ def positionStyle(position):
 def getVoicePart(dictionary):
 	for item in dictionary:
 		return item; 
+
+@register.filter
+def capitalize(string):
+	return str(string).upper()

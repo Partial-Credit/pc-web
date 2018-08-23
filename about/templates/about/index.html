@@ -51,7 +51,7 @@
 						</div>
 						<div class = "row">
 							<div class = "col-sm-12">
-								<h3> {{ member.nickname}} </h3>
+								<h3> {{ member.nickname|capitalize}} </h3>
 							</div>
 						</div>
 					</div>
@@ -64,7 +64,9 @@
 	<div class="container-fluid gray_background">
 		<div class="no-gutters row">
 			<div class= "col-sm">
-				<h2 class="card ribbon_header">Alumni</h2>
+			<div class= "non-semantic-protector">
+				<h2 id = "font_white" class="card ribbon_header">Alumni</h2>
+			</div>
 			</div>
 		</div>
 		<div class="no-gutters row">

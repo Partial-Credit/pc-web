@@ -23,6 +23,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', include('home.urls')),
     path('about/', include('about.urls')),
+    path('media/', include('music.urls')),
     path('manage/', admin.site.urls),
     path('login/', cas_views.login, name='cas_ng_login'),
     path('logout/', cas_views.logout, name='cas_ng_logout'),
