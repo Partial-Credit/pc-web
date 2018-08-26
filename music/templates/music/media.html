@@ -1,5 +1,29 @@
 {% extends 'base/base.html' %}
-
+{% load template_music %}
 {% block content %}
- <h1>This is the media page</h1>
+<div class = "container_fluid current_repetoire gray_background">
+	<div class = "container_fluid">
+		<div class="row">
+			<div class= "col non-semantic-protector">
+				<h2 id = "font_white" class="card ribbon_header ribbon_small">Current Repetoire</h2>
+			</div>
+		</div>
+		<div class = "row songs">
+	 {% for song in songs %}
+	 	<div class= "col-xs-6 col-md-4 song_info">
+		<h2> <span class ="song_title"> {{ song.title }}</span> <span class="opb">opb. {{ song.opb }}</span></h2>
+		{% if song.arranger %}
+		<p>Arranged by {{ song.arranger.all|listItems }}</p>
+		{% endif %}
+		{% if song.soloist %}
+		<p>Soloist: {{ song.soloist.all|listItems }} </p>
+		{% endif %}
+		{% if song.vocal_percussion %}
+		<p>VP: {{ song.vocal_percussion.all|listItems }}</p>
+		{% endif %}
+		</div>
+	 {% endfor %}
+	 	</div>
+	</div>
+</div>
 {% endblock %}

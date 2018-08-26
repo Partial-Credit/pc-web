@@ -1,0 +1,45 @@
+@import 'variables';
+
+.opb{
+	font-size: .5em;
+	font-style: italic;
+}
+
+.song_info{
+	display: block;
+	margin-bottom: 1em;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.song_info > h2{
+	font-size: 1.8em;
+}
+
+.song_title{
+	color: white;
+}
+
+.song_info > p{
+	margin-bottom: 0px;
+	font-size: .9em;
+}
+
+.current_repetoire{
+	margin-top: 20px;	
+}
+
+.songs{
+	padding-left: 15%;
+	padding-right: 10%;
+}
+
+@media (max-width: $screen-sm-min){
+	.ribbon_small{
+		font-size: 1.5em;
+	}
+	.song_info{
+		padding-left: 15%;
+		padding-right: 0%;
+	}
+}

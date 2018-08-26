@@ -40,9 +40,9 @@
 										{{ member.major }}, Class of {{ member.class_year }} 
 									</i></p>
 									<p>
-										<a class="about btn btn-secondary btn-block d-block d-sm-none" data-toggle="collapse" href="#{{ member.first_name }}_bio" role="button" aria-expanded="false" aria-controls="collapseBio">About</a>
+										<a class="about btn btn-secondary btn-block d-block d-sm-none" data-toggle="collapse" href="#{{ member.first_name }}_{{ member.last_name }}_bio" role="button" aria-expanded="false" aria-controls="collapseBio">About</a>
 									</p>	
-									<div class="collapse" id='{{ member.first_name }}_bio'>
+									<div class="collapse" id='{{ member.first_name }}_{{member.last_name}}_bio'>
 										<p class = "bio">{{ member.bio }}</p>
 									</div>
  									<p class = "bio d-none d-sm-block">{{ member.bio }}</p>

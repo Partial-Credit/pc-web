@@ -6,9 +6,9 @@ from users.models import Member
 class Song(models.Model):
 	title = models.CharField(max_length=100)
 	opb = models.CharField(max_length=100)
-	arranger = models.ManyToManyField(Member, related_name="arranger") 
-	soloist =  models.ManyToManyField(Member, related_name="soloist") 
-	vocal_percussion = models.ManyToManyField(Member, related_name="vocal_percussion") 
+	arranger = models.ManyToManyField(Member, related_name="arranger", symmetrical=False) 
+	soloist =  models.ManyToManyField(Member, related_name="soloist", blank=True, symmetrical=False) 
+	vocal_percussion = models.ManyToManyField(Member, related_name="vocal_percussion", blank=True, symmetrical=False) 
 
 	def __str__(self):
 		return self.title

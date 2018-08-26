@@ -125,3 +125,4 @@ ENV/
 *.scss.map
 
 media/
+references/
