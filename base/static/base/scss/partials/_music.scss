@@ -6,7 +6,6 @@
 }
 
 .song_info{
-	display: block;
 	margin-bottom: 1em;
 	padding-left: 20px;
 	padding-right: 10px;
@@ -38,8 +37,9 @@
 	.ribbon_small{
 		font-size: 1.5em;
 	}
-	.song_info{
-		padding-left: 15%;
+	.songs{
+		text-align: center;
+		padding-left: 0%;
 		padding-right: 0%;
 	}
 }

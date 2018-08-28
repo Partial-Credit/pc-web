@@ -10,7 +10,7 @@
 		</div>
 		<div class = "row songs">
 	 {% for song in songs %}
-	 	<div class= "col-xs-6 col-md-4 song_info">
+	 	<div class= "col-xs-6 col-md-6 col-lg-4 center-block song_info">
 		<h2> <span class ="song_title"> {{ song.title }}</span> <span class="opb">opb. {{ song.opb }}</span></h2>
 		{% if song.arranger %}
 		<p>Arranged by {{ song.arranger.all|listItems }}</p>
