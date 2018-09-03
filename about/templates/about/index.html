@@ -17,19 +17,19 @@
 	<div id="members" class = "container-fluid">
 		{% for member_group in members_list%}
 		<div class="row"> 
-			<div class="col-sm">
+			<div class="col-sm flex_center">
 				<h2 class="card ribbon_header voice_part">{{ member_group|getVoicePart }}</h2>
 			</div>	
 		</div>
 		<div class= "row">
 			{% for type, list_member in member_group.items %}
 				{% for member in list_member%}
-				<div class = "col-sm">
+				<div class = "col-sm flex_center">
 					<div class = "container member">
 						<div class = "no-gutters row xs-format">
-							<div class = "profile_picture col-sm-5 align-items-center" style  ="background-image: url('{{ member.profile.url }}') ">
+							<div class = "profile_picture col-sm-5 flex_center align-items-center" style  ="background-image: url('{{ member.profile.url }}') ">
 							</div>
-							<div class = "col-sm-7">
+							<div class = "col-sm-7 flex_center">
 								<div class = "member_details">
 									<h2> {{ member.first_name }} {{ member.last_name}}</h2>
 									<p><i> 
@@ -50,7 +50,7 @@
 							</div>
 						</div>
 						<div class = "row">
-							<div class = "col-sm-12">
+							<div class = "col-sm-12 flex_center">
 								<h3> {{ member.nickname|capitalize}} </h3>
 							</div>
 						</div>
@@ -63,7 +63,7 @@
 	</div>
 	<div class="container-fluid gray_background">
 		<div class="no-gutters row">
-			<div class= "col-sm">
+			<div class= "col-sm flex_center">
 			<div class= "non-semantic-protector">
 				<h2 id = "font_white" class="card ribbon_header">Alumni</h2>
 			</div>

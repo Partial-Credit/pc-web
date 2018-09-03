@@ -1,16 +1,16 @@
 {% extends 'base/base.html' %}
 {% load template_music %}
 {% block content %}
-<div class = "container_fluid current_repetoire gray_background">
-	<div class = "container_fluid">
+<div class = "container_fluid vertical-center gray_background">
+	<div class = "container_fluid current_repetoire">
 		<div class="row">
-			<div class= "col non-semantic-protector">
-				<h2 id = "font_white" class="card ribbon_header ribbon_small">Current Repetoire</h2>
+			<div class= "col non-semantic-protector center-block">
+				<h2 id = "font_white" class="card ribbon_header ribbon_small">Current Repertoire</h2>
 			</div>
 		</div>
 		<div class = "row songs">
 	 {% for song in songs %}
-	 	<div class= "col-xs-6 col-md-6 col-lg-4 center-block song_info">
+	 	<div class= "col-xs-6 col-md-6 col-lg-4 center-block song_info ">
 		<h2> <span class ="song_title"> {{ song.title }}</span> <span class="opb">opb. {{ song.opb }}</span></h2>
 		{% if song.arranger %}
 		<p>Arranged by {{ song.arranger.all|listItems }}</p>
@@ -24,6 +24,31 @@
 		</div>
 	 {% endfor %}
 	 	</div>
+	</div>
+</div>
+<div id = "albums" class = "container_fluid">
+	<div class="row">
+			<div class= "col non-semantic-protector">
+				<h2 id = "font_white" class="card ribbon_header ribbon_small">Albums</h2>
+			</div>
+	</div>
+	<div class = "row center-block"> 
+		{% for album in albums %}
+		<div class = "col-sm-12 col-md-6 col-lg-4">
+		<div class = "col-sm" align="center">
+			<div class = "album_cover" style  ="background-image: url('{{ album.cover.url }}') "></div>
+		</div>
+		<div class= "col-sm" align="center">
+			<div id = "font_white" class="album_info">
+				<h2> {{ album.title }} </h2>
+				<p class="release_year"> SPRING {{ album.release_year }} </p>
+				{% for song in album.songs.all %}
+				<p class = "song_album"><span class = "font_teal">{{ song }}</span> - {{song.opb}}</p>
+				{% endfor %}
+			</div>
+		</div>
+		</div>		
+		{% endfor %} 
 	</div>
 </div>
 {% endblock %}

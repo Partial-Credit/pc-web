@@ -15,31 +15,100 @@
 	font-size: 1.8em;
 }
 
+.songs{
+	padding-left: 10%;
+}
+
 .song_title{
 	color: white;
 }
+
 
 .song_info > p{
 	margin-bottom: 0px;
 	font-size: .9em;
 }
 
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one 🙂       */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5em;
+  margin-top: 2em;
+}
+
 .current_repetoire{
-	margin-top: 20px;	
+	margin-top: 20px;
+	width: 90%;	
 }
 
-.songs{
-	padding-left: 15%;
-	padding-right: 10%;
+.album_info > h2{
+	font-size: 1.5em;
+	font-weight: 400;
+	font-style: italic;
+	margin-bottom: 0px;
 }
 
-@media (max-width: $screen-sm-min){
+.release_year{
+	color: $pc-gray;
+}
+
+.album_info > p.song_album{
+	margin-bottom: 0px;
+}
+
+.font_teal{
+	color: $pc-teal;
+}
+
+.album_cover{
+	height: 320px;
+    width: 320px;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+@media (max-width: $screen-md-min) and (min-width: $screen-sm-min){
+	.songs{
+		padding-left: 30%;
+	}
+}
+
+@media (max-width: $screen-sm-min) and (min-width: $screen-sm-min - 150px){
+	.songs{
+		padding-left: 25%;
+	}
+}
+
+@media (max-width: $screen-sm-min - 150px){
 	.ribbon_small{
 		font-size: 1.5em;
 	}
 	.songs{
-		text-align: center;
-		padding-left: 0%;
+		padding-left: 15%;
 		padding-right: 0%;
 	}
+}
+
+
+
+
+.album_cover{
+	height: 320px;
+	width: 320px;
+	background-size: cover;
+	background-position: center center;
+}
+
+
+
+
+.album .album_cover{
+	height: 320px;
+	width: 320px;
+	background-size: cover;
+	background-position: center center;
 }
