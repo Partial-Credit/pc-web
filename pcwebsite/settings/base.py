@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'about',
     'music',
+    'dashboard',
     'multiselectfield',
 ]
 
@@ -80,6 +81,7 @@ CAS_REDIRECT_URL = '/'
 CAS_LOGOUT_COMPLETELY = False
 CAS_CREATE_USER = False
 
+LOGIN_URL = '/login/'
 
 ROOT_URLCONF = 'pcwebsite.urls'
 

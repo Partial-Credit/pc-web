@@ -1,0 +1,21 @@
+.table-sort {
+    a {
+        color: #fff;
+    }
+}
+
+.table-members {
+    margin-top: 2em;
+    i {
+        font-size: 20px;
+    }
+    i:hover {
+        color: $pc-teal;
+    }
+
+    .fa-trash-alt{
+        &:hover {
+            color: $danger;
+        }
+    }
+}

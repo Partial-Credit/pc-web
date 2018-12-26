@@ -6,15 +6,15 @@
 
     <div class='ribbon navbar navbar-expand-md align-middle nav-left'>
 
-        <a class="navbar-brand align-middle" href=""{% url 'index'%}"">Partial Credit</a>
+        <a class="navbar-brand align-middle" href=""{% url 'home'%}"">Partial Credit</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar01" aria-controls="navbar01" aria-expanded="false" aria-label="Toggle navigation">
             <div class="navbar-toggler-icon"></div>
         </button>
 
         <div class="collapse navbar-collapse" id="navbar01">
-    		<a class="nav-item nav-justified" href="{% url 'index'%}"><span class="nav-link">Home</span></a>
+    		<a class="nav-item nav-justified" href="{% url 'home'%}"><span class="nav-link">Home</span></a>
     		<a class="nav-item nav-justified" href="{% url 'about'%}"><span class="nav-link">About</span></a>
-            <a class="nav-item nav-justified" href="{% url 'media'%}"><span class="nav-link">Media</span></a>
+            <a class="nav-item nav-justified" href="{% url 'music:media'%}"><span class="nav-link">Media</span></a>
 
             <div class="nav-left-second">
                 <a class="nav-item nav-justified" href='#'><span class="nav-link">Auditions</span></a>

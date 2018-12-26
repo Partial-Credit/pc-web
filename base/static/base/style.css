@@ -195,6 +195,23 @@ div.text_left_justify {
     border-bottom: 0.5em solid #00BCB5;
   }
 }
+.table-sort a {
+  color: #fff;
+}
+
+.table-members {
+  margin-top: 2em;
+}
+.table-members i {
+  font-size: 20px;
+}
+.table-members i:hover {
+  color: #00BCB5;
+}
+.table-members .fa-trash-alt:hover {
+  color: #dc3545;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -210,6 +227,14 @@ html {
   /* Vertically center the text there */
   background-color: #008984;
   color: #fefefe;
+}
+
+a.member-link {
+  color: #fefefe;
+}
+a.member-link:hover {
+  color: #bbb;
+  text-decoration: none;
 }
 
 .test-xlarge, .test-large, .test-medium, .test-small {
@@ -545,6 +570,10 @@ li {
   width: 320px;
   background-size: cover;
   background-position: center center;
+}
+
+.btn-dash {
+  color: #fff !important;
 }
 
 /*# sourceMappingURL=style.css.map */

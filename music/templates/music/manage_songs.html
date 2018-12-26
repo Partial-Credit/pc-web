@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<script type="text/javascript" src="/~mnb2/a3/admin/jsi18n/"></script>
+<div class="container">
+    <br>
+    <form class="site-form" action="{% url 'music:manage_songs' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% for field in form %}
+			{% if field.name == 'arranger' or field.name == 'soloist' or field.name == 'vocal_percussion' %}
+					<p>
+						<a class = "btn btn-primary" data-toggle="collapse" href = "#{{field.name}}" role="button" aria-expanded="false" aria-controls="{{field.name}}"> {{ field.name|title }} </a>
+					</p>
+					<div class="collapse" id="{{field.name}}">
+						{% for checkbox in field %}
+						<div class = "checkbox">
+							<label>
+							{{ checkbox.tag }} {{ checkbox.choice_label }}
+							</label>
+						</div>
+						{% endfor %}
+					</div>
+			{% else %}
+				<p>{{ field.name|title }} {{ field }} </p>
+			{% endif %}
+		{% endfor %}
+		<input type="submit" value="Create"/>
+	</form>	
+</div>
+
+{% endblock %}

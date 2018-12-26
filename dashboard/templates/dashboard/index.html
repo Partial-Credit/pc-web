@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    Logged in as {{ request.user.username}}
+    <br>
+
+
+    <br>
+    <h3>Manage Members:</h3>
+    <a class="btn btn-primary btn-dash">Edit Member</a>
+    <a class="btn btn-success btn-dash">Add Member</a>
+    <a class="btn btn-danger btn-dash">Remove Member</a>
+
+    <br>
+    <h3>Manage Website</h3>
+    <a class="btn btn-primary btn-dash">Manage Permissions</a>
+    <a class="btn btn-dash btn-primary ">Edit Contact Form Email</a>
+
+    <br>
+    <h3>Manage Current Repertoire</h3>
+    <a class="btn btn-primary btn-dash" href = "{% url 'music:manage_songs' %}">Edit Song</a>
+    <a class="btn btn-success btn-dash">Add Song</a>
+    <a class="btn btn-danger btn-dash">Remove Song</a> 
+</div>
+
+{% endblock %}

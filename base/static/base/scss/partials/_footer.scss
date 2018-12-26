@@ -18,3 +18,12 @@ body {
   background-color: $pc-dark-teal;
   color:#fefefe;
 }
+
+a.member-link {
+    color: #fefefe;
+
+    &:hover{
+        color: #bbb;
+        text-decoration: none;
+    }
+}

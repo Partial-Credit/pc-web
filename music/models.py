@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 import sys
 sys.path.append(sys.path[0] + "\\users")
 from django.core.validators import MinValueValidator, MaxValueValidator
@@ -27,3 +28,8 @@ class Album(models.Model):
 
 	def __str__(self):
 		return self.title
+
+class CreateSong(forms.ModelForm):
+	class Meta:
+		model = Song
+		fields = ['title', 'opb', 'arranger', 'soloist', 'vocal_percussion']
