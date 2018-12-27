@@ -1,14 +1,27 @@
 {% extends 'base/base.html' %}
 
 {% block content %}
-<div class = "edit_song_list">
-<ol>
-{% for song in songs %}
-	<li>
-	<a href = "{% url 'music:edit_song' song.pk %}">{{ song }}</a>
-	</li>
-{% endfor %}
-</ol>
+<div class = "edit_song_list container">
+<table class = "table table-striped">
+	<thead class = 'thead-light'>
+		<tr>
+			<th scope = "col">Song Name</th>
+			<th scope = "col"> </th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for song in songs %}
+			<tr>
+				<th scope = "col">
+				<a href = "{% url 'music:edit_song' song.pk %}">{{ song }}</a>
+				</th>
+				<th scope = "col">
+					<a role="button" class="btn btn-danger" href= "{% url 'music:delete_song' song.pk %}">Delete Song</a>
+				</th>
+			</tr>
+		{% endfor %}
+	</tbody>
+</table>
 </div>
 
 {% endblock %}

@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from .models import Song
 from .models import Album
 from django.contrib.auth.decorators import login_required
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from . import forms
 from django.http import HttpResponse
 # Create your views here.
@@ -47,4 +48,9 @@ class SongUpdate(UpdateView):
 	def form_valid(self, form):
 		song = form.save(commit=False)
 		song.save()
-		return redirect("music:media")
+		return redirect("music:edit_songs")
+
+class SongDelete(DeleteView):
+	model = Song
+	success_url = reverse_lazy('music:edit_songs')
+
