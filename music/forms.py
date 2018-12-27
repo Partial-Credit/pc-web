@@ -14,6 +14,16 @@ class CreateSong(forms.Form):
 	arranger = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget= forms.CheckboxSelectMultiple())
 	soloist = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
 	vocal_percussion= forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
-	
+
+class SongForm(forms.ModelForm):
+    class Meta:
+        model = models.Song
+        fields = '__all__'
+        widgets = {
+            'arranger': forms.CheckboxSelectMultiple(),
+            'soloist': forms.CheckboxSelectMultiple(),
+			'vocal_percussion': forms.CheckboxSelectMultiple(),
+
+        }
 
 

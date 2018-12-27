@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class = "edit_song_list">
+<ol>
+{% for song in songs %}
+	<li>
+	<a href = "{% url 'music:edit_song' song.pk %}">{{ song }}</a>
+	</li>
+{% endfor %}
+</ol>
+</div>
+
+{% endblock %}

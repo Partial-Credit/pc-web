@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Song
 from .models import Album
 from django.contrib.auth.decorators import login_required
+from django.views.generic.edit import UpdateView
 from . import forms
 from django.http import HttpResponse
 # Create your views here.
@@ -20,6 +21,12 @@ def media(request):
 	return render(request, 'music/media.html', {'songs': songs, 'albums': albums})
 
 @login_required
+def edit_songs(request):
+	songs = Song.objects.all()
+	return render(request, 'music/edit_songs.html', {'songs': songs})
+
+
+@login_required
 def manage_songs(request):
 	if request.method == 'POST':
 		form = forms.CreateSong(request.POST, request.FILES)
@@ -30,3 +37,14 @@ def manage_songs(request):
 	else:
 		form = forms.CreateSong()	
 	return render(request, "music/manage_songs.html", {'form': form})
+
+class SongUpdate(UpdateView):
+	model = Song
+	form_class = forms.SongForm
+	template_name_suffix = '_update_form'
+	context_object_name = 'song'
+
+	def form_valid(self, form):
+		song = form.save(commit=False)
+		song.save()
+		return redirect("music:media")
