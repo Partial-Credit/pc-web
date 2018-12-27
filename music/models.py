@@ -29,7 +29,3 @@ class Album(models.Model):
 	def __str__(self):
 		return self.title
 
-class CreateSong(forms.ModelForm):
-	class Meta:
-		model = Song
-		fields = ['title', 'opb', 'arranger', 'soloist', 'vocal_percussion']

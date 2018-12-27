@@ -6,7 +6,7 @@
     <form class="site-form" action="{% url 'music:manage_songs' %}" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{% for field in form %}
-			{% if field.name == 'arranger' or field.name == 'soloist' or field.name == 'vocal_percussion' %}
+			{% if field.name == 'songs' %}
 					<p>
 						<a class = "btn btn-primary" data-toggle="collapse" href = "#{{field.name}}" role="button" aria-expanded="false" aria-controls="{{field.name}}"> {{ field.name|title }} </a>
 					</p>

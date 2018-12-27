@@ -8,7 +8,7 @@
 
 
     <br>
-    <h3>Manage Members:</h3>
+    <h3>Manage Members</h3>
     <a class="btn btn-primary btn-dash">Edit Member</a>
     <a class="btn btn-success btn-dash">Add Member</a>
     <a class="btn btn-danger btn-dash">Remove Member</a>
@@ -19,10 +19,14 @@
     <a class="btn btn-dash btn-primary ">Edit Contact Form Email</a>
 
     <br>
-    <h3>Manage Current Repertoire</h3>
+    <h3>Manage Songs</h3>
     <a class="btn btn-primary btn-dash" href = "{% url 'music:edit_songs'%}">Edit Song</a>
     <a class="btn btn-success btn-dash" href = "{% url 'music:manage_songs' %}">Add Song</a>
-    <a class="btn btn-danger btn-dash">Remove Song</a> 
+
+    <br>
+    <h3>Manage Albums</h3>
+    <a class="btn btn-primary btn-dash" href = "{% url 'music:edit_albums'%}">Edit Album</a>
+    <a class="btn btn-success btn-dash" href = "{% url 'music:manage_albums' %}">Add Album</a>
 </div>
 
 {% endblock %}

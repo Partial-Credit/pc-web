@@ -8,22 +8,22 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from multiselectfield import MultiSelectField
 from users.models import Member
 
-class CreateSong(forms.Form):
-	title = forms.CharField(max_length=100)
-	opb = forms.CharField(max_length=100)
+class SongForm(forms.ModelForm):
 	arranger = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget= forms.CheckboxSelectMultiple())
 	soloist = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
 	vocal_percussion= forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
-
-class SongForm(forms.ModelForm):
-    class Meta:
-        model = models.Song
-        fields = '__all__'
-        widgets = {
-            'arranger': forms.CheckboxSelectMultiple(),
-            'soloist': forms.CheckboxSelectMultiple(),
+	class Meta:
+		model = models.Song
+		fields = '__all__'
+		widgets = {
+			'arranger': forms.CheckboxSelectMultiple(),
+			'soloist': forms.CheckboxSelectMultiple(),
 			'vocal_percussion': forms.CheckboxSelectMultiple(),
+		}
 
-        }
-
+class AlbumForm(forms.ModelForm):
+	songs = forms.ModelMultipleChoiceField(queryset=models.Song.objects.order_by('title').all(), widget=forms.CheckboxSelectMultiple())
+	class Meta:
+		model = models.Album
+		fields = '__all__'
 
