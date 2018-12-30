@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'about',
     'music',
     'dashboard',
+    'contact',
     'multiselectfield',
 ]
 
@@ -146,7 +147,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'users.Member'
-
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' #for emailing to console
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 

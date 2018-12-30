@@ -25,6 +25,36 @@ div.text_left_justify {
   text-align: left;
 }
 
+.email-form {
+  background-color: #333333;
+}
+
+#send {
+  width: 5em;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#send:hover {
+  background-color: #006a66;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.form-field-box > input {
+  width: 100%;
+}
+
+.form-field-box > textarea {
+  width: 100%;
+}
+
+#font_teal {
+  color: #00BCB5;
+}
+
 .navbar {
   border-bottom: 3px #333333 solid;
 }

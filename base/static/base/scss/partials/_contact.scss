@@ -1,0 +1,31 @@
+@import 'variables';
+
+.email-form{
+	background-color: $pc-gray; 
+}
+
+#send{
+	width: 5em;
+	cursor: pointer;
+	margin-right: 10px;	
+}
+
+#send:hover{
+	background-color: $pc-darker-teal;
+}
+
+.form-field{
+	width: 100%;
+}
+
+.form-field-box > input{
+	width: 100%;
+}
+
+.form-field-box > textarea {
+	width: 100%;
+}
+
+#font_teal{
+	color: $pc-teal;
+}

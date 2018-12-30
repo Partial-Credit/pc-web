@@ -27,6 +27,7 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('users/', include('users.urls')),
     path('manage/', admin.site.urls),
+    path('', include('contact.urls')),
     path('login/', cas_views.login, name='cas_ng_login'),
     path('logout/', cas_views.logout, name='cas_ng_logout'),
     path('accounts/callback', cas_views.callback, name='cas_ng_proxy_callback'),
