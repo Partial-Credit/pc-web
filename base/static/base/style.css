@@ -51,6 +51,10 @@ div.text_left_justify {
   width: 100%;
 }
 
+div.django-ckeditor-widget[style] {
+  display: block !important;
+}
+
 #font_teal {
   color: #00BCB5;
 }

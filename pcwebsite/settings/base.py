@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'dashboard',
     'contact',
     'multiselectfield',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 
@@ -81,6 +83,29 @@ CAS_FORCE_CHANGE_USERNAME_CASE='lower'
 CAS_REDIRECT_URL = '/'
 CAS_LOGOUT_COMPLETELY = False
 CAS_CREATE_USER = False
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat']
+        ],
+        'stylesSet': [
+            {
+                "name": 'No inline-block',
+                "element": 'div',
+                "attributes": {'class': 'django-ckeditor-widget'},
+                "styles": {'display': 'block'},
+            },
+        ],
+        'width' : '100%',
+        
+    },
+}
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 LOGIN_URL = '/login/'
 

@@ -16,12 +16,17 @@
 		</div>
 		<form class = "form-field" method="post">
 		    {% csrf_token %}
+		    {{form.media}}
 		    {% for field in form %}
 				<p class = "form-field">
 				{{ field.name|title }}
 				<br>
 				<div class= "form-field-box">
-					{{ field }}
+					{% if field.name == 'messag'%}
+					{% else %}
+						{{ field }}
+					{% endif %}
+					
 				</div>
 				</p>
 		    {% endfor %}
@@ -34,7 +39,7 @@
 		</div>
 		<div class = "col-md-1"></div>
 		<div class = "col-md-4 d-flex flex-column align-items-center">
-			<div class = "d-none d-lg-block d-md-block d-flex flex-column align-items-center">
+			<div class = "d-none d-lg-block d-md-block">
 				<h1 class = "card ribbon_header">Thank You!</h1>
 				<p id = "font_white">To contact us about potential performances, questions, or to give us feedback, fill out this form or email our officer list at <a href="mailto:partialcredit@union.rpi.edu" id = "font_teal">partialcredit@union.rpi.edu.</a></p>
 				<br>

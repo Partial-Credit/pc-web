@@ -34,6 +34,8 @@
 <body>
 
     {% include "base/nav.html" %}
+    <script type="text/javascript"
+    src="{% static "ckeditorfiles/ckeditor.js" %}"></script>
     <main role="main" class="container-fluid" id="page-container">
         {% block content %}
         {% endblock %}

@@ -26,6 +26,10 @@
 	width: 100%;
 }
 
+div.django-ckeditor-widget[style] {
+  display: block !important;
+}
+
 #font_teal{
 	color: $pc-teal;
 }
