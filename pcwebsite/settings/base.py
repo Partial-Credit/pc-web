@@ -93,14 +93,6 @@ CKEDITOR_CONFIGS = {
             ['Link', 'Unlink'],
             ['RemoveFormat']
         ],
-        'stylesSet': [
-            {
-                "name": 'No inline-block',
-                "element": 'div',
-                "attributes": {'class': 'django-ckeditor-widget'},
-                "styles": {'display': 'block'},
-            },
-        ],
         'width' : '100%',
         
     },

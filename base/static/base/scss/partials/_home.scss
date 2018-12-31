@@ -1,0 +1,43 @@
+.article-image{
+  width: 100%;
+}
+
+.card.ribbon_header{
+	margin: auto;
+	margin-bottom: 1.5em;
+	margin-top: 1.5em;
+}
+
+iframe{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.carousel-inner{
+	height: 35em;
+}
+
+.carousel-inner img {
+  margin: auto;
+  height: 40em;
+  overflow: hidden;
+}
+
+.article-form{
+	margin-bottom: 35px;
+	margin: auto;
+	width: 100%;
+	background-color: $pc-dark-teal;	
+}
+
+.article-title{
+	margin: 10px;
+	padding-bottom: 20px;
+	font-size: 2em;
+}
+
+.home-info{
+	padding-left: 100px;
+	padding-right: 100px;
+}
