@@ -59,8 +59,49 @@ div.django-ckeditor-widget[style] {
   color: #00BCB5;
 }
 
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 70%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: #00BCB5;
+}
+
+.image-container:hover .overlay {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.icon {
+  color: white;
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.icon:hover {
+  color: white;
+}
+
 .article-image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .card.ribbon_header {
@@ -69,10 +110,29 @@ div.django-ckeditor-widget[style] {
   margin-top: 1.5em;
 }
 
+.youtube {
+  height: 30em;
+  margin-bottom: 20px;
+}
+
+.w-iframe {
+  height: 100%;
+}
+
+.w-iframe > iframe {
+  width: 100%;
+  height: 80%;
+  margin: none;
+}
+
 iframe {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+.article {
+  margin-bottom: 30px;
 }
 
 .carousel-inner {
@@ -86,16 +146,17 @@ iframe {
 }
 
 .article-form {
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   margin: auto;
   width: 100%;
+  height: 100%;
   background-color: #008984;
 }
 
 .article-title {
   margin: 10px;
   padding-bottom: 20px;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .home-info {
@@ -103,6 +164,30 @@ iframe {
   padding-right: 100px;
 }
 
+@media (min-width: 576px) and (max-width: 768px) {
+  .article-title {
+    font-size: 1em;
+  }
+}
+@media (min-width: 992px) {
+  .youtube {
+    height: 40em;
+  }
+
+  .w-iframe > iframe {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .home-info {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .w-iframe > iframe {
+    height: 70%;
+  }
+}
 .navbar {
   border-bottom: 3px #333333 solid;
 }
