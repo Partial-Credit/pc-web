@@ -12,7 +12,8 @@
   right: 0;
   width: 100%;
   opacity: 0;
-  transition: .3s ease;
+  transition: .5s ease;
+  -webkit-transition: all ease .5s;
   background-color: $pc-teal;
 }
 
@@ -98,8 +99,8 @@
 }
 
 .home-info{
-	padding-left: 100px;
-	padding-right: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-md-min){
@@ -119,8 +120,8 @@
 
 @media (max-width: $screen-md-min){
 	.home-info{
-		padding-left: 50px;
-		padding-right: 50px;
+		padding-left: 0px;
+		padding-right: 0px;
 	}
 	.w-iframe > iframe{
 		height: 70%;

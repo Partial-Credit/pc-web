@@ -19,11 +19,55 @@ body {
   color:#fefefe;
 }
 
-a.member-link {
-    color: #fefefe;
+.footer-container{
+  width: 100%;
+  position : relative;
+}
 
+.footer-container > p{
+  margin-bottom: 0px;
+}
+
+.social-icon{
+  font-size: 1.5em;
+  color: #fefefe;
+    margin-left: auto;
     &:hover{
         color: #bbb;
         text-decoration: none;
     }
+}
+
+.icon-footer{
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 24%;
+  right: 0;
+  bottom: 0;
+}
+
+a.member-link {
+    color: #fefefe;
+    margin-left: auto;
+    &:hover{
+        color: #bbb;
+        text-decoration: none;
+    }
+}
+
+@media (min-width: $screen-lg-max){
+  .footer > .container-fluid{
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+
+@media (max-width: $screen-sm-min){
+  .footer-container{
+    font-size: .75em;
+  }
+  .social-icon{
+    font-size: 1.5em;
+  }
 }

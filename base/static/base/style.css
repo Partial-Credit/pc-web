@@ -73,7 +73,8 @@ div.django-ckeditor-widget[style] {
   right: 0;
   width: 100%;
   opacity: 0;
-  transition: 0.3s ease;
+  transition: 0.5s ease;
+  -webkit-transition: all ease 0.5s;
   background-color: #00BCB5;
 }
 
@@ -160,8 +161,8 @@ iframe {
 }
 
 .home-info {
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
@@ -180,8 +181,8 @@ iframe {
 }
 @media (max-width: 768px) {
   .home-info {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .w-iframe > iframe {
@@ -392,14 +393,58 @@ html {
   color: #fefefe;
 }
 
+.footer-container {
+  width: 100%;
+  position: relative;
+}
+
+.footer-container > p {
+  margin-bottom: 0px;
+}
+
+.social-icon {
+  font-size: 1.5em;
+  color: #fefefe;
+  margin-left: auto;
+}
+.social-icon:hover {
+  color: #bbb;
+  text-decoration: none;
+}
+
+.icon-footer {
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 24%;
+  right: 0;
+  bottom: 0;
+}
+
 a.member-link {
   color: #fefefe;
+  margin-left: auto;
 }
 a.member-link:hover {
   color: #bbb;
   text-decoration: none;
 }
 
+@media (min-width: 1199.98px) {
+  .footer > .container-fluid {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
+@media (max-width: 576px) {
+  .footer-container {
+    font-size: 0.75em;
+  }
+
+  .social-icon {
+    font-size: 1.5em;
+  }
+}
 .test-xlarge, .test-large, .test-medium, .test-small {
   color: #fff;
   background-color: red;
@@ -437,7 +482,7 @@ a.member-link:hover {
 .test-xlarge {
   display: none;
 }
-@media (max-width: 100000000000000020px) {
+@media (max-width: 99999999999999999px) {
   .test-xlarge {
     display: block;
   }
