@@ -137,13 +137,30 @@ iframe {
 }
 
 .carousel-inner {
-  height: 35em;
+  width: 100%;
+  padding-top: 50%;
+  position: relative;
+  margin-bottom: 0px;
 }
 
-.carousel-inner img {
-  margin: auto;
-  height: 40em;
+.carousel-outer {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.carousel-item {
+  margin-right: 0px;
+  margin-left: 0px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   overflow: hidden;
+}
+
+.carousel-item > img {
+  height: 100%;
 }
 
 .article-form {
