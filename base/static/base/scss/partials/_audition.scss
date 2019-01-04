@@ -1,0 +1,36 @@
+.audition-page{
+	padding-top: 20px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.audition{
+	padding: 30px;
+	p{
+		font-size: 1.3em;
+	}
+	ul{
+		width: 100%;
+		margin: 0px;
+		padding-left: 40px;
+
+	}
+}
+
+@media (max-width: $screen-sm-max){
+	.audition{
+		p{
+			font-size: 1.1em;
+		}
+		ul{
+			font-size: .8em;
+		}
+	}
+}
+
+@media (min-width: $screen-lg-min){
+	.audition{
+		padding-left: 150px;
+		padding-right: 150px;
+	}
+}

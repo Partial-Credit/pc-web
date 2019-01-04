@@ -27,6 +27,7 @@ urlpatterns = [
     path('media/', include('music.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('users/', include('users.urls')),
+    path('audition/', include('auditions.urls')),
     path('manage/', admin.site.urls),
     path('', include('contact.urls')),
     path('login/', cas_views.login, name='cas_ng_login'),

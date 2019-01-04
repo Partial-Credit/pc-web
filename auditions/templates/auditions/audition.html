@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class = "container-fluid audition-page">
+	<div class = "row">
+		<div class = "col d-flex flex-column justify-content-center">
+			<h1 class = "card ribbon_header">Auditions</h1>
+			<div class = "gray_background audition">
+				<p>Auditions for Partial Credit are held once per semester. Come check us out at the activities fair to sign up for an audition time or look for fliers posted around campus for information about audition opportunities!
+				<br> <br>
+				<b id = "font_teal">	
+				During auditions, we'll ask you to: </b></p>
+				<ul>
+					<li>Go up and down scales to warm up and test your range</li>
+					<li>Do a volume exercise (crescendo and decrescendo on a single pitch)</li>
+					<li>Perform about a one minute song of your choice (usually a verse and a chorus)</li>
+					<li>Do some impromptu vocal percussion if you can</li>	
+				</ul>
+				<br>
+				<p>
+				Just remember to relax, do your best, and have fun! <a id ="font_teal" href = "{% url 'contact:email' %}">Contact us</a> if you have any questions and to sign up for an audition time slot.
+				
+				<br><br>
+				<b id = "font_teal">What happens next?</b>
+				<br>
+				If we want to hear more from you, you will be invited to a callback audition. At callbacks we test how well you can learn new music, blend with the group, and sing on your own.
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}

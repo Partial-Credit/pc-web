@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'music',
     'dashboard',
     'contact',
+    'auditions',
     'multiselectfield',
     'ckeditor',
     'ckeditor_uploader'
