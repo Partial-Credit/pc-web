@@ -6,6 +6,10 @@
 .navbar {
     // background-color: $pc-gray;
     border-bottom: 3px $pc-gray solid;
+    
+    @media(max-width: $screen-sm-max){
+        background-color: $pc-dark-gray;
+    }
 
     @media (min-width: $screen-sm-max) {
         display: inline-flex; //Override Boostrap default
@@ -16,6 +20,10 @@
 
 .navbar-brand {
     // Hide the text brand on medium+ screens
+    img{
+        width: 5em;
+    }
+
     @media (min-width: $screen-md-min) {
         display: none;
     }
@@ -36,6 +44,8 @@
     }
 }
 
+
+
 .nav-logo {
     display: none;  //Hide the logo on mobile devices
 
@@ -44,7 +54,7 @@
         margin-right: 20px;
         width: 200px;
         height: auto;
-        margin-top: 0.75em;
+        margin-top: 0.5em;
     }
 
     // Only show the logo on medium+ screens
@@ -108,7 +118,7 @@
 // Start of Ribbon specific decoration
 //
 .ribbon {
-	// display:inline-block;
+    // display:inline-block;
     // background-color: $pc-teal;
     display:inline-flex;
     width: 100%;
@@ -122,30 +132,30 @@
 // Only show ribbon tails on medium+ screens
 @media (min-width: $screen-md-min) {
     .ribbon:after, .ribbon:before {
-    	margin-top:0.5em;
-    	content: "";
-    	float:left;
-    	border:1.5em solid $pc-teal;
+        margin-top:0.5em;
+        content: "";
+        float:left;
+        border:1.5em solid $pc-teal;
     }
 
     .ribbon:after {
-    	border-right-color:transparent;
+        border-right-color:transparent;
     }
 
     .ribbon:before {
-    	border-left-color:transparent;
+        border-left-color:transparent;
     }
 }
 
 .ribbon a:link, .ribbon a:visited {
-	color:#fff;
+    color:#fff;
     font-weight: bold;
-	text-decoration:none;
+    text-decoration:none;
     // float:right;
     @media (min-width: $screen-md-min) {
         height:3.5em;
     }
-	overflow:hidden;
+    overflow:hidden;
 }
 
 .ribbon span {
@@ -158,39 +168,39 @@
     @media (min-width: $screen-sm-max) {
         display: inline-block;
     }
-	line-height:3em;
-	// padding:0 26px;
+    line-height:3em;
+    // padding:0 26px;
     padding: auto;
-	margin-top:0.5em;
-	position:relative;
-	transition: background-color 0.2s, margin-top 0.2s;
+    margin-top:0.5em;
+    position:relative;
+    transition: background-color 0.2s, margin-top 0.2s;
 }
 
 // Only show hover effects on medium+ screens
 @media (min-width: $screen-md-min) {
     .ribbon a:hover span {
-    	background: $pc-light-teal;
-    	margin-top:0;
+        background: $pc-light-teal;
+        margin-top:0;
     }
 }
 
 // Only show nav item decoration on medium+ screens
 @media (min-width: $screen-md-min) {
     .ribbon span:before {
-    	content: "";
-    	position:absolute;
-    	top:3em;
-    	left:0;
-    	border-right:0.5em solid darken($pc-dark-teal, 10%);
-    	border-bottom:0.5em solid $pc-teal;
+        content: "";
+        position:absolute;
+        top:3em;
+        left:0;
+        border-right:0.5em solid darken($pc-dark-teal, 10%);
+        border-bottom:0.5em solid $pc-teal;
     }
 
     .ribbon span:after {
-    	content: "";
-    	position:absolute;
-    	top:3em;
-    	right:0;
-    	border-left:0.5em solid darken($pc-dark-teal, 10%);
-    	border-bottom:0.5em solid $pc-teal;
+        content: "";
+        position:absolute;
+        top:3em;
+        right:0;
+        border-left:0.5em solid darken($pc-dark-teal, 10%);
+        border-bottom:0.5em solid $pc-teal;
     }
 }

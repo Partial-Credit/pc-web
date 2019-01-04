@@ -8,6 +8,10 @@ html {
 body {
     background-color: $pc-dark-gray;
     font-size: 16px;
+	padding-top: 8%;
+	@media(max-width: $screen-sm-max){
+		padding-top: 12%;
+	}
 }
 
 

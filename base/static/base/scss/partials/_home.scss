@@ -51,17 +51,24 @@
 }
 
 .youtube{
-	height: 30em;
-	margin-bottom: 20px;
+	height: 80%;
 }
 
 .w-iframe{
-	height: 100%;
+	width: 100%;
+	padding-top: 67%;
+	position: relative;
+	margin: auto;
 }
 .w-iframe > iframe{
-	width:100%; 
-	height: 80%;
-	margin: none;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin-bottom: none;
 }
 
  iframe{
@@ -122,18 +129,16 @@
 	padding-right: 50px;
 }
 
-@media (min-width: $screen-sm-min) and (max-width: $screen-md-min){
+@media (max-width: $screen-md-min){
 	.article-title{
 		font-size: 1em;
 	}
 }
 
-@media (min-width: $screen-lg-min){
-	.youtube{
-		height: 40em;
-	}
-	.w-iframe > iframe{
-		width: 90%;
+@media (min-width: $screen-lg-max){
+	.w-iframe{
+		width: 80%;
+		padding-top: calc(.80 * .67 * 100%);
 	}
 }
 
@@ -141,8 +146,5 @@
 	.home-info{
 		padding-left: 0px;
 		padding-right: 0px;
-	}
-	.w-iframe > iframe{
-		height: 70%;
 	}
 }
