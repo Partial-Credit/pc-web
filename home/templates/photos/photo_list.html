@@ -2,7 +2,7 @@
 {% block javascript %}
 <script>
 	$(function() {
-		$("#id_thumb").change(function () {
+		$("#id_image").change(function () {
 		  if (this.files && this.files[0]) {
 		    var reader = new FileReader();
 		    reader.onload = function (e) {
@@ -46,13 +46,21 @@
 		
 		$(".js-crop-and-upload").click(function () {
 			var cropData = $image.cropper("getData");
-			console.log("did it!\n");
-		    console.log($image.cropper("getData"));
 			$("#id_x").val(cropData["x"]);
 			$("#id_y").val(cropData["y"]);
 			$("#id_height").val(cropData["height"]);
 			$("#id_width").val(cropData["width"]);
-			$("#formUpload").submit();
+			//$("#formUpload").submit();
+		});
+		$(".js-submit-and-upload").click(function () {
+			var cropData = $image.cropper("getData");
+			if(id_height.value != '' && id_width.value != '' && id_height.value != '0' && id_width.value != '0'){
+				return;
+			}
+			$("#id_x").val(cropData["x"]);
+			$("#id_y").val(cropData["y"]);
+			$("#id_height").val(cropData["height"]);
+			$("#id_width").val(cropData["width"]);
 		});
 
 	});
@@ -63,33 +71,42 @@
 		<div class ="row">
 		<form method="post" enctype="multipart/form-data" id="formUpload">
   			{% csrf_token %}
-  			{{ form }}
+  			{{ form.as_p }}
+			<a class= "btn btn-primary btn-dash" data-toggle="modal" href="#modalCrop">Open Crop Tool</a>
+			{% if method == 'update'%}	
+				<input class = "js-submit-and-upload" type="submit" value="Create"/>
+			{% else %}
+				<input type="submit" value="Create"/>
+			{% endif %}
 		</form>
 		</div>
 		
-		<div class="modal fade" id="modalCrop">
-		  	<div class="modal-dialog">
+		<div class="modal fade" id="modalCrop" data-keyboard = "false" data-backdrop="static">
+		  	<div class="modal-dialog modal-lg">
 		    	<div class="modal-content">
 		      		<div class="modal-header">
-		        	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      		<h4 class="modal-title">Crop the photo</h4>
+		        	<button type="button" class="close js-crop-and-upload" data-dismiss="modal" aria-label="Close">
 		          	<span aria-hidden="true">&times;</span>
 		        	</button>
-		        	<h4 class="modal-title">Crop the photo</h4>
 		      	</div>
-		      	<div class="modal-body">
-		        	<img src="" id="image" style="max-width: 100%;">
+		      	<div class="modal-body crop-box">
+		      		{% if method == 'update' %}
+		      			<img src="{{photo.image.url}}" id="image" style="max-width: 100%;"/>
+		      		{% else %}
+		        		<img src="" id="image" style="max-width: 100%;"/>
+		      		{% endif %}
 		      	</div>
 		      	<div class="modal-footer">
 		        	<div class="btn-group pull-left" role="group">
 		          	<button type="button" class="btn btn-default js-zoom-in">
-		            <span class="glyphicon glyphicon-zoom-in"></span>
+		            <i class="fa fa-search-plus" aria-hidden="true"></i>
 		          	</button>
 		          	<button type="button" class="btn btn-default js-zoom-out">
-		            <span class="glyphicon glyphicon-zoom-out"></span>
+		            <i class="fa fa-search-minus" aria-hidden="true"></i>
 		          	</button>
 			        </div>
-			        	<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
-			        	<button type="button" class="btn btn-primary js-crop-and-upload">Crop and upload</button>
+			        	<button type="button" class="btn btn-default js-crop-and-upload" data-dismiss="modal">Close</button>
 			      	</div>
 		    	</div>
 			</div>

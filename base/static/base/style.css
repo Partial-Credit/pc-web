@@ -65,6 +65,10 @@ div.django-ckeditor-widget[style] {
   color: #00BCB5;
 }
 
+.modal-body.crop-box {
+  padding: 0px;
+}
+
 .audition-page {
   padding-top: 20px;
   padding-left: 0px;
@@ -809,7 +813,7 @@ li {
   background-position: center center;
 }
 
-@media (max-width: 768px) and (min-width: 576px) {
+@media (max-width: 767.98px) and (min-width: 576px) {
   .songs {
     padding-left: 30%;
   }
@@ -819,7 +823,7 @@ li {
     padding-left: 25%;
   }
 }
-@media (max-width: 426px) {
+@media (max-width: 425.98px) {
   .ribbon_small {
     font-size: 1.5em;
   }

@@ -71,7 +71,7 @@
 }
 
 
-@media (max-width: $screen-md-min) and (min-width: $screen-sm-min){
+@media (max-width: $screen-sm-max) and (min-width: $screen-sm-min){
 	.songs{
 		padding-left: 30%;
 	}
@@ -83,7 +83,7 @@
 	}
 }
 
-@media (max-width: $screen-sm-min - 150px){
+@media (max-width: $screen-xs-max - 150px){
 	.ribbon_small{
 		font-size: 1.5em;
 	}
