@@ -24,13 +24,13 @@
 		<div class= "row">
 			{% for type, list_member in member_group.items %}
 				{% for member in list_member%}
-				<div class = "col-sm flex_center">
-					<div class = "container member">
+				<div class = "col-xl-6 col-12 flex_center">
+					<div class = "container-fluid member">
 						<div class = "no-gutters row xs-format">
-							<div class = "profile_picture col-sm-5 flex_center align-items-center" style  ="background-image: url('{{ member.profile.url }}') ">
+							<div class = "profile_picture {{ member.first_name }} col-sm-5 flex_center align-items-center" style  ="background-image: url('{{ member.profile.url }}') ">
 							</div>
 							<div class = "col-sm-7 flex_center">
-								<div class = "member_details">
+								<div class = "member_details {{member.last_name}} fix_height">
 									<h2> {{ member.first_name }} {{ member.last_name}}</h2>
 									<p><i> 
 										<span class="member_position">{{ member.position|positionStyle }}</span>
@@ -48,6 +48,16 @@
  									<p class = "bio d-none d-sm-block">{{ member.bio }}</p>
 								</div>
 							</div>
+							<script type="text/javascript">
+								if($(".{{member.last_name}}").height() > 320){
+				    				$(".{{member.first_name}}").height($('.{{member.last_name}}').height());
+				    			}
+				    			$(window).resize(function (){
+									if($(".{{member.last_name}}").height() > 320){
+				    				$(".{{member.first_name}}").height($('.{{member.last_name}}').height());
+				    			}
+				    			});
+							</script>
 						</div>
 						<div class = "row">
 							<div class = "col-sm-12 flex_center">
@@ -70,7 +80,7 @@
 			</div>
 		</div>
 		<div class="no-gutters row">
-			<div class = "col">
+			<div class = "col flex-column alumni">
 			<ul style="list-style-type:none">
 				{% for alumni in alumni_list %}
 					<li>{{ alumni.first_name }} {{ alumni.last_name }} <span class="class_year">{{ alumni.class_year }}</span></li>

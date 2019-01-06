@@ -11,6 +11,10 @@
 <br>
 <div class = "gray_background container-fluid carousel-outer">
 	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+	<div class = "text-over-carousel">
+		<h1 class = "carousel-font-style">WELCOME TO PARTIAL CREDIT!</h1>
+		<a role = "button" id = "about-button" class = "btn btn-info" href = "{% url 'about' %}"><b>ABOUT US</b></a>
+	</div>
   	<div class="carousel-inner flex_center align-items-center">
   		<div class = "carousel-item active">
 			<img class="d-block cover_photos" src="{{official.thumb.url}}" alt="{{official.title}}">	
@@ -29,7 +33,7 @@
 	</div>
 	<div class = "row d-flex justify-content-center">
 		{% for article in articles %}
-		<div class = "col-xl-3 col-lg-4 col-6 no-gutters article d-flex justify-content-center">
+		<div class = "col-xl-3 col-lg-4 col-sm-6 no-gutters article d-flex justify-content-center">
 				<div class = "article-form">
 					<div class ="image-container">
 					<a class="" data-toggle="modal" href="#{{article.slug}}">
@@ -41,11 +45,11 @@
 						</div>
 					</a>
 					</div>
-					<div class="modal fade" id="{{article.slug}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal fade news_modal" id="{{article.slug}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 					    <div class="modal-content">
 					    	<div class="modal-header">
-					    		<h5 class="modal-title" id="exampleModalLabel">{{article.title}}
+					    		<h5 class="modal-title news-title" id="exampleModalLabel">{{article.title|upper}}
 					    		</h5>
 					    		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					          		<span aria-hidden="true">&times;</span>
@@ -53,7 +57,8 @@
 					      	</div>
 						    <div class="modal-body">
 							    <img class = "article-image" src="{{article.thumb.url}}"/>
-							    {{article.body}}
+							    <br>
+							    <p>{{article.body}}</p>
 						    </div>
 						    <div class = "modal-footer">
 						    	<p>Posted by {{article.author}} on {{article.date}}</p>	
@@ -61,7 +66,7 @@
 					    </div>
 					</div>	
 				</div>
-				<h2 id="font_white" class="article-title text-center">{{article.title}}</h2>
+				<h2 class="article-title text-center">{{article.title}}</h2>
 			</div>
 		</div>
 		{% endfor %}

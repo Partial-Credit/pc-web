@@ -9,9 +9,9 @@ from multiselectfield import MultiSelectField
 from users.models import Member
 
 class SongForm(forms.ModelForm):
-	arranger = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget= forms.CheckboxSelectMultiple())
-	soloist = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
-	vocal_percussion= forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple())
+	arranger = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget= forms.CheckboxSelectMultiple(), required=True)
+	soloist = forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple(), required=False)
+	vocal_percussion= forms.ModelMultipleChoiceField(queryset=Member.objects.order_by('last_name').all(), widget=forms.CheckboxSelectMultiple(), required=False)
 	class Meta:
 		model = models.Song
 		fields = '__all__'

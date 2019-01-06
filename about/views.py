@@ -15,7 +15,7 @@ def index(request):
 	basses = list()
 	alumni = list()
 
-	members = Member.objects.all()
+	members = Member.objects.all().order_by('last_name')
 	for member in members:
 		if(member.current_member):
 			if member.voice_part == 'S':

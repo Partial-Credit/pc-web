@@ -81,6 +81,32 @@
 	margin-bottom: 30px;
 }
 
+.text-over-carousel{
+	position: absolute;
+	left: 5%;
+	top: 40%;
+	z-index: 1;
+}
+
+.carousel-font-style{
+	color: white;
+	text-shadow: 2px 5px 5px #000000;
+	width: 50%;
+	font-size: 5vw;
+	font-weight: bold;
+}
+
+#about-button{
+	width: 10em;
+	font-size: 3vw;
+	background-color: $pc-teal;
+	border-color: $pc-teal;
+}
+
+#about-button:hover{
+	background-color: $pc-dark-teal;
+	border-color: $pc-dark-teal;
+}
 
 .carousel-inner{ 
 	width: 100%;
@@ -122,16 +148,71 @@
 	margin: 10px;
 	padding-bottom: 20px;
 	font-size: 1.5em;
+	color: white;
 }
+
+.news_modal{
+	.modal-dialog{
+		.modal-content{
+			border: none;
+			.modal-body{
+				background-color: white;
+				color: $pc-gray;
+				padding: 0;
+				p{
+					padding-top: 20px;
+					padding-left: 10px;
+					padding-right: 10px;
+					font-size: 1.1em;
+				}
+			}
+			
+			.modal-header{
+				background-color: $pc-dark-gray;
+			}
+			.modal-title{
+				color: $pc-teal;
+			}
+			.modal-footer{
+				background-color: $pc-dark-gray;
+				color: $pc-gray-light;
+			}
+
+			.close{
+				color: white;
+			}
+		}
+	}
+}
+
 
 .home-info{
 	padding-left: 50px;
 	padding-right: 50px;
 }
 
-@media (max-width: $screen-md-min){
+
+@media(min-width: $screen-lg-min) and (max-width: $screen-lg-max){
 	.article-title{
-		font-size: 1em;
+		font-size: 1.2em;
+	}
+}
+
+@media (max-width: $screen-sm-max){
+	.text-over-carousel{
+		top: 20%;
+	}
+	.carousel-font-style{
+		font-size: 7vw;
+	}
+	#about-button{
+		font-size: 4vw;
+	}		
+}
+
+@media (max-width: $screen-sm-min){
+	.article-form{
+		width: 80%;
 	}
 }
 
@@ -143,8 +224,11 @@
 }
 
 @media (max-width: $screen-md-min){
+	.article-title{
+		font-size: 1.2em;
+	}
 	.home-info{
-		padding-left: 0px;
-		padding-right: 0px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }

@@ -2,6 +2,7 @@ from PIL import Image
 from django import forms
 from django.core.files import File
 from .models import CoverPhoto
+import sys
 
 class PhotoForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput())
@@ -31,9 +32,9 @@ class PhotoForm(forms.ModelForm):
             img_name = photo.image.path[img_index + 1: end_index]
             file_extension = photo.image.path[end_index:]
             
-            path = str(photo.image.path.strip()[0:img_index])
             cropped_name = img_name + "_copy" + file_extension
-            path += "\\" + cropped_name
+            path = sys.path[0] + "\\assets\\" + cropped_name
+            
             cropped_image.save(path)
             photo.thumb.save(cropped_name, File(open(path, 'rb')))
         

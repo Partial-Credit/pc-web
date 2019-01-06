@@ -56,6 +56,7 @@
 	margin-bottom: 0px;
 }
 
+
 .profile_picture{
 	height: 320px;
     width: 180px;
@@ -76,15 +77,39 @@
 	text-align: right;
 }
 
-ul{
-	padding-left: 0px;
-	width: 40%;	
+
+.alumni{
+
+	ul{
+		padding-left: 0px;
+		width: 40%;	
+	}
+
+	li{
+		width: 100%;
+		font-size: 1em;
+	}
+
 }
 
-li{
-	width: 100%;
-	font-size: 1.3em;
+@media(min-width: $screen-md-min){
+	.alumni{
+		ul{
+			width: 60%;
+		}
+	}
 }
+
+
+@media(min-width:  $screen-sm-min){
+	.alumni{
+
+		li{
+			font-size: 1.3em;
+		}
+	}
+}
+
 
 .gray_background{
 	background-color: $pc-gray;
@@ -95,8 +120,8 @@ li{
 }
 
  @media (max-width: $screen-sm-min) {
-     ul{
-     	width: 60%
+     .alumni > ul{
+     	width: 100%
      }
      .xs-format{
 	 	align-items: center;

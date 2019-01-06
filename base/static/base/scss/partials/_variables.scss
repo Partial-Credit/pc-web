@@ -8,6 +8,7 @@ $pc-light-teal: lighten($pc-teal, 6%);
 
 $pc-dark-gray:  #1A1A1A;
 $pc-gray:       #333333;
+$pc-gray-light: lighten($pc-gray, 50%); 
 
 
 // Sizing

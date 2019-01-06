@@ -17,8 +17,8 @@ def addMoreSongs():
 		print(obj)	
 
 def media(request):
-	songs = Song.objects.all()
-	albums = Album.objects.all()
+	songs = Song.objects.all().order_by('title')
+	albums = Album.objects.all().order_by('title')
 	return render(request, 'music/media.html', {'songs': songs, 'albums': albums})
 
 @login_required
