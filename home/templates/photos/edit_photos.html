@@ -3,6 +3,11 @@
 {% block content %}
 <div class = "edit_photos_list container">
 <br>
+<div class = "row">
+	{%include 'music/return.html'%}
+</div>
+<br>
+<div class = "row">
 <table class = "table table-striped">
 	<thead class = 'thead-light'>
 		<tr class= "d-flex justify-content-center">
@@ -27,6 +32,7 @@
 		{% endfor %}
 	</tbody>
 </table>
+</div>
 </div>
 
 {% endblock %}

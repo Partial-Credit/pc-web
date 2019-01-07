@@ -31,6 +31,11 @@ div.text_left_justify {
   text-align: left;
 }
 
+@media (min-width: 576px) {
+  .contact-text {
+    padding: 0px;
+  }
+}
 .email-form {
   background-color: #333333;
 }
@@ -85,6 +90,7 @@ div.django-ckeditor-widget[style] {
   width: 100%;
   margin: 0px;
   padding-left: 40px;
+  font-size: 1.3em;
 }
 
 @media (max-width: 767.98px) {
@@ -92,7 +98,7 @@ div.django-ckeditor-widget[style] {
     font-size: 1.1em;
   }
   .audition ul {
-    font-size: 0.8em;
+    font-size: 1.1em;
   }
 }
 @media (min-width: 992px) {
@@ -842,6 +848,21 @@ a.member-link:hover {
   .home-info .card.ribbon_header:after {
     right: -11.5px;
     border-width: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .ribbon-resize .card {
+    height: 2em;
+    font-size: 1.5em;
+    width: 100%;
+  }
+  .ribbon-resize .card.ribbon_header:before {
+    left: -15.5px;
+    border-width: 16px;
+  }
+  .ribbon-resize .card.ribbon_header:after {
+    right: -15.5px;
+    border-width: 16px;
   }
 }
 .opb {

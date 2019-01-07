@@ -3,34 +3,40 @@
 {% block content %}
 <div class = "edit_song_list container">
 <br>
-<table class = "table table-striped">
-	<thead class = 'thead-light'>
-		<tr class= "d-flex">
-			<th class = "col-2">Song Name</th>
-			<th class = "col-2">OPB</th>
-			<th class = "col-2">Arranger</th>
-			<th class = "col-2">Soloist</th>
-			<th class = "col-2">Vocal Percussionist</th>
-			<th class = "col-2"> </th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for song in songs %}
-			<tr class = "d-flex">
-				<th class = "col-2">
-					<a href = "{% url 'music:edit_song' song.pk %}">{{ song }}</a>
-				</th>
-				<th class = "col-2"> {{ song.opb }}</th>
-				<th class = "col-2"> {{ song.arranger.all|listItems }} </th>
-				<th class = "col-2"> {{ song.soloist.all|listItems }} </th>
-				<th class = "col-2"> {{ song.vocal_percussion.all|listItems }} </th>
-				<th class = "col-2">
-					<a role="button" class="btn btn-danger" href= "{% url 'music:delete_song' song.pk %}">Delete Song</a>
-				</th>
-			</tr>
-		{% endfor %}
-	</tbody>
-</table>
+	<div class = "row">
+		{%include "music/return.html"%}
+	</div>
+	<br>
+	<div class = "row">
+		<table class = "table table-striped">
+			<thead class = 'thead-light'>
+				<tr class= "d-flex">
+					<th class = "col-2">Song Name</th>
+					<th class = "col-2">OPB</th>
+					<th class = "col-2">Arranger</th>
+					<th class = "col-2">Soloist</th>
+					<th class = "col-2">Vocal Percussionist</th>
+					<th class = "col-2"> </th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for song in songs %}
+					<tr class = "d-flex">
+						<th class = "col-2">
+							<a href = "{% url 'music:edit_song' song.pk %}">{{ song }}</a>
+						</th>
+						<th class = "col-2"> {{ song.opb }}</th>
+						<th class = "col-2"> {{ song.arranger.all|listItems }} </th>
+						<th class = "col-2"> {{ song.soloist.all|listItems }} </th>
+						<th class = "col-2"> {{ song.vocal_percussion.all|listItems }} </th>
+						<th class = "col-2">
+							<a role="button" class="btn btn-danger" href= "{% url 'music:delete_song' song.pk %}">Delete Song</a>
+						</th>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
 </div>
 
 {% endblock %}

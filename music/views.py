@@ -40,6 +40,7 @@ class SongCreate(CreateView):
 	def get_context_data(self, **kwargs):
 		context = super(SongCreate, self).get_context_data(**kwargs)
 		context['method']= 'Create'
+		context['url'] = 'music:manage_song'
 		return context
 
 class SongUpdate(UpdateView):
@@ -52,6 +53,7 @@ class SongUpdate(UpdateView):
 	def get_context_data(self, **kwargs):
 		context = super(SongUpdate, self).get_context_data(**kwargs)
 		context['method']= 'Update'
+		context['url'] = 'music:edit_song'
 		return context
 
 class SongDelete(DeleteView):

@@ -3,7 +3,14 @@
 {% block content %}
 <div class="container">
     <br>
-    <form class="site-form" action="{% url 'music:manage_songs' %}" method="post" enctype="multipart/form-data">
+    <div class="row flex-row">
+    	{%include "music/return.html"%}
+    	{%if method == "Update"%}
+    	&nbsp;
+    	<a href = "{% url 'music:edit_albums'%}" class = "btn btn-success">Return to List</a>
+    	{%endif%}
+	</div>
+    <form class="site-form" method="post" enctype="multipart/form-data">
 		{% csrf_token %}
 		{% for field in form %}
 			{% if field.name == 'songs' %}

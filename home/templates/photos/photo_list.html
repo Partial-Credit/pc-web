@@ -68,6 +68,13 @@
 {% endblock %}
 {% block content %}
 	<div class = "container">
+		<div class = "row">
+			{%include 'music/return.html' %}
+			{%if method == "update"%}
+		    	&nbsp;
+		    	<a href = "{% url 'home:edit_photos'%}" class = "btn btn-success">Return to List</a>
+		    {%endif%}
+		</div>
 		<div class ="row">
 		<form method="post" enctype="multipart/form-data" id="formUpload">
   			{% csrf_token %}

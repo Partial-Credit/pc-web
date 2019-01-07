@@ -29,10 +29,5 @@ def index(request):
 		else:
 			alumni.append(member)
 	alumni.sort(key=lambda x: x.class_year, reverse=True)
-	print(alumni)	
 	members_list = [{"Sopranos":sopranos}, {"Altos":altos}, {"Tenors":tenors}, {"Basses":basses}]
-	for members in members_list:
-		for member in members.values():
-			for m in member:
-				print(m.position)
 	return render(request, 'about/index.html', {"members_list": members_list, "alumni_list": alumni})

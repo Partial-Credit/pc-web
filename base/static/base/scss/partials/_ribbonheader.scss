@@ -73,3 +73,21 @@
     }
   }
 }
+
+@media(min-width: $screen-md-min) and (max-width: $screen-md-max){
+  .ribbon-resize{
+    .card{
+        height: 2em;
+        font-size: 1.5em;
+        width: 100%;
+      }
+      .card.ribbon_header:before {
+        left: -15.5px;
+        border-width: 16px;
+      }
+      .card.ribbon_header:after {
+        right: -15.5px;
+        border-width: 16px;
+      }
+  }
+}

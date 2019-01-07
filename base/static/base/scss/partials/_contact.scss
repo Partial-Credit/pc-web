@@ -1,5 +1,11 @@
 @import 'variables';
 
+@media(min-width: $screen-sm-min){
+	.contact-text{
+		padding: 0px;
+	}
+}
+
 .email-form{
 	background-color: $pc-gray; 
 }
