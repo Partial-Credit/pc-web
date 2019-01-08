@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-import django_cas_ng.views as cas_views
+import django_cas_ng.views
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -30,9 +30,9 @@ urlpatterns = [
     path('audition/', include('auditions.urls')),
     path('manage/', admin.site.urls),
     path('', include('contact.urls')),
-    path('login/', cas_views.login, name='cas_ng_login'),
-    path('logout/', cas_views.logout, name='cas_ng_logout'),
-    path('accounts/callback', cas_views.callback, name='cas_ng_proxy_callback'),
+    path('login/', django_cas_ng.views.LoginView.as_view(), name='cas_ng_login'),
+    path('logout/', django_cas_ng.views.LogoutView.as_view(), name='cas_ng_logout'),
+    path('accounts/callback', django_cas_ng.views.CallbackView.as_view(), name='cas_ng_proxy_callback'),
 
 ]
 
