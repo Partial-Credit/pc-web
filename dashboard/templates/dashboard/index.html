@@ -32,6 +32,12 @@
     <h3>Manage Albums</h3>
     <a class="btn btn-primary btn-dash" href = "{% url 'music:edit_albums'%}">Edit Album</a>
     <a class="btn btn-success btn-dash" href = "{% url 'music:manage_albums' %}">Add Album</a>
+
+    <br>
+    <h3>Manage Articles</h3>
+    <a class="btn btn-primary btn-dash" href = "{% url 'home:edit_articles'%}">Edit Article</a>
+    <a class="btn btn-success btn-dash" href = "{% url 'home:manage_articles' %}">Add Article</a>
+    
 </div>
 
 {% endblock %}

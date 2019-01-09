@@ -1,8 +1,13 @@
 from PIL import Image
 from django import forms
 from django.core.files import File
-from .models import CoverPhoto
+from .models import CoverPhoto, Article
 import sys
+
+class ArticleForm(forms.ModelForm):
+    class Meta:
+        model = Article
+        fields = ['title', 'body', 'thumb']
 
 class PhotoForm(forms.ModelForm):
     x = forms.FloatField(widget=forms.HiddenInput())
