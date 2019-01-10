@@ -21,7 +21,7 @@ def homepage(request):
 		cover_photos_list = cover_photos[1:]
 		official = cover_photos[0]
 	elif len(cover_photos) == 0:
-		official = cover_photos[0]
+		official = None
 	return render(request, 'home/index.html', {'articles': articles, 'cover_photos': cover_photos_list, 'official': official})
 
 @login_required
@@ -76,7 +76,7 @@ class ArticleCreate(CreateView):
 		context = super(ArticleCreate, self).get_context_data(**kwargs)
 		articles = Article.objects.all()
 		context['method'] = 'create'
-		context['articles'] = articles 
+		context['articles'] = articles
 		return context
 
 class ArticleUpdate(UpdateView):
@@ -90,7 +90,7 @@ class ArticleUpdate(UpdateView):
 		context = super(ArticleUpdate, self).get_context_data(**kwargs)
 		articles = Article.objects.all()
 		context['method'] = 'update'
-		context['articles'] = articles 
+		context['articles'] = articles
 		return context
 
 class ArticleDelete(DeleteView):
