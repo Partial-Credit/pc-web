@@ -38,6 +38,7 @@ class MemberForm(forms.ModelForm):
     major = forms.CharField()
     class_year = forms.NumberInput()
     profile = forms.FileInput()
+    other_email = forms.EmailField()
 
     class Meta:
         model = Member
@@ -60,4 +61,6 @@ class MemberForm(forms.ModelForm):
             "major",
             "class_year",
             "profile",
+            "other_email",
+            "current_member",
         ]
