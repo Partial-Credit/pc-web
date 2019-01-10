@@ -5,12 +5,12 @@
     <table class="table table-bordered table-striped table-dark table-sort table-members">
         <thead>
             <tr>
-                <th scope="col"><a href="{% url 'users-view-all'%}last_name">Name</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
-                <th scope="col"><a href="{% url 'users-view-all'%}username">RCS</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
-                <th scope="col"><a href="{% url 'users-view-all'%}voice_part">Voice Part</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
-                <th scope="col"><a href="{% url 'users-view-all'%}current_member">Current Member</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
-                <th scope="col"><a href="{% url 'users-view-all'%}position">Position</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
-                <th scope="col"><a href="{% url 'users-view-all'%}class_year">Class Year</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}last_name">Name</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}username">RCS</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}voice_part">Voice Part</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}current_member">Current Member</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}position">Position</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
+                <th scope="col"><a href="{% url 'users:view_all'%}class_year">Class Year</a> <span class="text-right"><i class="fas fa-sort"></i></span></th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -25,14 +25,17 @@
                 <td>{{member.position}}</td>
                 <td>{{member.class_year}}</td>
                 <td>
+                    {% if edit_other or user.id == member.id%}
                     <span class="d-flex justify-content-between">
-                        <a title="Edit" href="{% url 'users-edit' member.id %}"><i class="fas fa-edit"></i></a>
+
+
+                        <a title="Edit" href="{% url 'users:edit' member.id %}"><i class="fas fa-edit"></i></a>
                         {% if member.current_member %}
-                        <a title="Set Alumni" href="{% url 'users-edit' member.id %}"><i class="fas fa-graduation-cap"></i></a>
+                        <a title="Set Alumni" href="{% url 'users:edit' member.id %}"><i class="fas fa-graduation-cap"></i></a>
                         {% endif %}
-                        <a title="Delete" href="{% url 'users-edit' member.id %}"><i class="fas fa-trash-alt"></i></a>
-                        <!-- <a title="Edit" href="{% url 'users-edit' member.id %}"><i class="fas fa-edit"></i></a> -->
+                        <a title="Delete" href="{% url 'users:edit' member.id %}"><i class="fas fa-trash-alt"></i></a>
                     </span>
+                    {% endif %}
                 </td>
             </tr>
 
