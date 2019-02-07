@@ -1,25 +1,47 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import permission_required, login_required
+from django.contrib.auth.models import Permission
 from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse
 from django.contrib import messages
 from .models import Member
 from .forms import MemberForm, FullMemberForm
 
-
-@permission_required('users.add_member')
+@login_required
+@permission_required('users.officer', raise_exception=True)
 def add(request):
-    if request.user.has_perm('users.add_member'):
-        if request.method == 'POST':
-            pass
+
+    if request.method == 'POST':
+        form = FullMemberForm(request.POST, request.FILES, None)
+
+        if form.is_valid():
+            instance = form.save()
+
+            # Add all applicable permissions
+            view_permission = Permission.objects.get(codename='view_member')
+            modify_permission = Permission.objects.get(codename='change_member')
+            instance.user_permissions.add(view_permission, modify_permission)
+
+            # Check if officer permission should be added
+            if len(instance.position) >= 1:
+                officer_permission = Permission.objects.get(codename='officer')
+                instance.user_permissions.add(officer_permission)
+
+            instance.save()
+
+            messages.success(request, "Member added successfully")
+            next = request.POST.get('next', "/")
+            return redirect('users:view_all')
         else:
-            form = FullMemberForm()
-            return render(request, 'users/add.html', {"form": form})
+            return HttpResponse("Form failed to validate.", status=403)
     else:
-        raise PermissionDenied("You don't have permission to add users.")
+        form = FullMemberForm()
+        return render(request, 'users/add.html', {"form": form, "button_text": "Add"})
 
 
 
-@permission_required(['users.delete_member', 'users.change_other_member'])
+@login_required
+@permission_required('users.officer', raise_exception=True)
 def remove(request, member_id):
     instance = get_object_or_404(Member, pk=member_id)
 
@@ -29,8 +51,15 @@ def remove(request, member_id):
     # early before they graduate.
     instance.is_active = False
 
+
     instance.current_member = False
-    instance.position = None
+
+    # Remove officer perms if this person has them
+    if len(instance.position) >= 1:
+        officer_permission = Permission.objects.get(codename='officer')
+        instance.user_permissions.remove(officer_permission)
+        instance.position = None
+
     instance.save()
 
     return redirect('users:view_all')
@@ -38,25 +67,48 @@ def remove(request, member_id):
 
 
 
-
-@permission_required('users.change_member')
+@login_required
+@permission_required('users.change_member', raise_exception=True)
 def edit(request, member_id):
     instance = get_object_or_404(Member, pk=member_id)
 
+    # Check if user is modifying themselves
     if instance.username == request.user.username:
         # User is modifying their own object
 
         if request.method == 'POST':
-            form = MemberForm(request.POST, request.FILES, instance=instance)
+            if request.user.has_perm('users.officer'):
+                officer=True
+            else:
+                officer=False
+
+            if officer:
+                form = FullMemberForm(request.POST, request.FILES, instance=instance)
+            else:
+                form = MemberForm(request.POST, request.FILES, instance=instance)
+
             if form.is_valid():
                 instance = form.save()
-                # instance.save()
-                messages.success(request, "Member updated successfully")
 
-                next = request.POST.get('next', '/')
-                return redirect('view_all')
-        else:
-            form = MemberForm(instance=instance)
+                if officer:
+                    # Check adding or removing permissions
+                    officer_permission = Permission.objects.get(codename='officer')
+                    print(instance.position)
+                    if len(instance.position) >= 1:
+                        instance.user_permissions.add(officer_permission)
+                        instance.save()
+                    else:
+                        instance.user_permissions.remove(officer_permission)
+                        instance.save()
+
+                messages.success(request, "Member updated successfully")
+                return redirect('users:view_all')
+
+        else: #GET request
+            if request.user.has_perm('users.officer'):
+                form = FullMemberForm(instance=instance)
+            else:
+                form = MemberForm(instance=instance)
 
             context = {
                 "form": form,
@@ -66,19 +118,24 @@ def edit(request, member_id):
             return render(request, 'users/edit.html', context)
 
     # If user isn't trying to change their own object check if they have permission to modify others
-    elif request.user.has_perm('users.change_other_member'):
+    elif request.user.has_perm('users.officer'):
         # Modify other user
-
         if request.method == 'POST':
-            form = MemberForm(request.POST, request.FILES, instance=instance)
+            form = FullMemberForm(request.POST, request.FILES, instance=instance)
             if form.is_valid():
                 instance = form.save()
-                messages.success(request, "Member updated successfully")
+                officer_permission = Permission.objects.get(codename='officer')
+                if len(instance.position) >= 1:
+                    instance.user_permissions.add(officer_permission)
+                    instance.save()
+                else:
+                    instance.user_permissions.remove(officer_permission)
+                    instance.save()
 
-                next = request.POST.get('next', '/')
-                return redirect(next)
-        else:
-            form = MemberForm(instance=instance)
+                messages.success(request, "Member updated successfully")
+                return redirect('users:view_all')
+        else: #Get Request
+            form = FullMemberForm(instance=instance)
 
             context = {
                 "form": form,
@@ -88,32 +145,38 @@ def edit(request, member_id):
             return render(request, 'users/edit.html', context)
 
     else:
-        raise PermissionDenied("You don't have permission to change other users.")
+        return HttpResponse("You don't have permission to change other users.", status=403)
+
+@login_required()
+@permission_required("users.officer", raise_exception=True)
+def setAlumni(request, member_id):
+    instance = get_object_or_404(Member, pk=member_id)
+
+    instance.current_member = False
+    if len(instance.position) >= 1:
+        officer_permission = Permission.objects.get(codename='officer')
+        instance.user_permissions.remove(officer_permission)
+    instance.position = []
+    instance.save()
+
+    return redirect('users:view_all')
 
 
 
-
-
-
-
-
-def view(request):
-    pass
-
-
-@permission_required("users.view_member")
+@login_required()
+@permission_required("users.view_member", raise_exception=True)
 def viewAll(request, sort_by='last_name'):
     members = Member.objects.filter(hidden=False, is_active=True)
-    if request.user.has_perm('users.change_other_member'):
-        edit_other = True
+    if request.user.has_perm('users.officer'):
+        officer = True
     else:
-        edit_other = False
+        officer = False
 
 
     context = {
         "members": members,
         "sort_by": sort_by,
-        "edit_other": edit_other,
+        "officer": officer,
     }
 
     return render(request, 'users/all.html', context)

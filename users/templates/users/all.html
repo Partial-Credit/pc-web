@@ -2,6 +2,11 @@
 {% block content %}
 
 <div class="container">
+    <h1>All Members</h1>
+    {% if officer %}
+    <a class="btn btn-success btn-dash" href="{% url 'users:add'%}">Add Member</a>
+    {% endif %}
+    <a class="btn btn-primary btn-dash" href="{% url 'dashboard:index'%}">Dashboard</a>
     <table class="table table-bordered table-striped table-dark table-sort table-members">
         <thead>
             <tr>
@@ -16,7 +21,7 @@
         </thead>
         <tbody>
 
-            {% for member in members|dictsort:sort_by %}
+            {% for member in members|dictsortreversed:sort_by %}
             <tr>
                 <td>{{member.first_name}} {{member.last_name}}</td>
                 <td>{{member.username}}</td>
@@ -25,15 +30,17 @@
                 <td>{{member.position}}</td>
                 <td>{{member.class_year}}</td>
                 <td>
-                    {% if edit_other or user.id == member.id%}
+                    {% if officer or user.id == member.id%}
                     <span class="d-flex justify-content-between">
 
 
                         <a title="Edit" href="{% url 'users:edit' member.id %}"><i class="fas fa-edit"></i></a>
                         {% if member.current_member %}
-                        <a title="Set Alumni" href="{% url 'users:edit' member.id %}"><i class="fas fa-graduation-cap"></i></a>
+                        <a title="Set Alumni" href="{% url 'users:graduate' member.id %}"><i class="fas fa-graduation-cap"></i></a>
                         {% endif %}
-                        <a title="Delete" href="{% url 'users:edit' member.id %}"><i class="fas fa-trash-alt"></i></a>
+                        {% if officer %}
+                        <a title="Delete" href="{% url 'users:remove' member.id %}"><i class="fas fa-trash-alt"></i></a>
+                        {% endif %}
                     </span>
                     {% endif %}
                 </td>

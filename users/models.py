@@ -63,4 +63,5 @@ class Member(AbstractUser):
         verbose_name = "Member"
         permissions = [
             ('change_other_member', 'can change other users'),
+            ('officer', 'Is officer. Can manage and modify website')
         ]
