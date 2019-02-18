@@ -9,28 +9,28 @@
 
     <br>
     <h3>Manage Members</h3>
-    <a class="btn btn-primary btn-dash" href="{% url 'users:view_all'%}">View & Edit Members</a>
-    <a class="btn btn-success btn-dash" href="{% url 'users:add'%}">Add Member</a>
+    <a class="btn btn-primary btn-dash" href="{% url 'users:view_all'%}" role="button">View & Edit Members</a>
+    <a class="btn btn-success btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'users:add'%}">Add Member</a>
 
     <br>
     <h3>Manage Cover Photos</h3>
-    <a class="btn btn-primary btn-dash" href = "{% url 'home:edit_photos'%}">Edit Cover Photo</a>
-    <a class="btn btn-success btn-dash" href = "{% url 'home:manage_photos' %}">Add Cover Photo</a>
+    <a class="btn btn-primary btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'home:edit_photos'%}" role="button">Edit Cover Photo</a>
+    <a class="btn btn-success btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'home:manage_photos' %}" role="button">Add Cover Photo</a>
 
     <br>
     <h3>Manage Songs</h3>
-    <a class="btn btn-primary btn-dash" href = "{% url 'music:edit_songs'%}">Edit Song</a>
-    <a class="btn btn-success btn-dash" href = "{% url 'music:manage_songs' %}">Add Song</a>
+    <a class="btn btn-primary btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'music:edit_songs'%}" role="button">Edit Song</a>
+    <a class="btn btn-success btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'music:manage_songs' %} role="button"">Add Song</a>
 
     <br>
     <h3>Manage Albums</h3>
-    <a class="btn btn-primary btn-dash" href = "{% url 'music:edit_albums'%}">Edit Album</a>
-    <a class="btn btn-success btn-dash" href = "{% url 'music:manage_albums' %}">Add Album</a>
+    <a class="btn btn-primary btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'music:edit_albums'%}" role="button">Edit Album</a>
+    <a class="btn btn-success btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'music:manage_albums' %}" role="button">Add Album</a>
 
     <br>
     <h3>Manage Articles</h3>
-    <a class="btn btn-primary btn-dash" href = "{% url 'home:edit_articles'%}">Edit Article</a>
-    <a class="btn btn-success btn-dash" href = "{% url 'home:manage_articles' %}">Add Article</a>
+    <a class="btn btn-primary btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'home:edit_articles'%}" role="button">Edit Article</a>
+    <a class="btn btn-success btn-dash {% if not officer %}disabled{% endif %}" href="{% url 'home:manage_articles' %}" role="button">Add Article</a>
 
 </div>
 

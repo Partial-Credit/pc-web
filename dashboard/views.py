@@ -6,4 +6,10 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def index(request):
-    return render(request, 'dashboard/index.html')
+    if request.user.has_perm('users.officer'):
+        officer = True
+    else:
+        officer = False
+
+
+    return render(request, 'dashboard/index.html', {"officer": officer})
