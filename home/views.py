@@ -7,7 +7,7 @@ from .models import Article
 from .models import CoverPhoto
 from .forms import PhotoForm, ArticleForm
 from django.core import serializers
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
@@ -25,11 +25,13 @@ def homepage(request):
 	return render(request, 'home/index.html', {'articles': articles, 'cover_photos': cover_photos_list, 'official': official})
 
 @login_required
+@permission_required('users.officer', raise_exception=True)
 def edit_photos(request):
 	photos = CoverPhoto.objects.all()
 	return render(request, 'photos/edit_photos.html', {'photos': photos })
 
 @login_required
+@permission_required('users.officer', raise_exception=True)
 def edit_articles(request):
 	articles = Article.objects.all()
 	return render(request, 'articles/edit_articles.html', {'articles': articles })
