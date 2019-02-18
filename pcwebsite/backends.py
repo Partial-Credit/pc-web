@@ -8,9 +8,11 @@ class CustomCASBackend(CASBackend):
     def user_can_authenticate(self, user):
 
         if user is not None:
-
-            if isinstance(user, Member):
-                return True
+            if isinstance(user, Member): # Check if the user has an account on the website
+                if user.is_active: # Check if the user has an active account (not "deleted" or deactivated)
+                    return True
+                else:
+                    return False
             else:
                 return False
 

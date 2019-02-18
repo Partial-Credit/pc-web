@@ -15,7 +15,9 @@ def index(request):
 	basses = list()
 	alumni = list()
 
-	members = Member.objects.all().order_by('last_name')
+	# Don't include member objects with the hidden flag set. (Used to hide admin panel user if present)
+	# Don't include member objects that have been "deleted" (had is_active set to False)
+	members = Member.objects.filter(hidden=False, is_active=True).order_by('last_name')
 	for member in members:
 		if(member.current_member):
 			if member.voice_part == 'S':
@@ -28,6 +30,7 @@ def index(request):
 				basses.append(member)
 		else:
 			alumni.append(member)
+
 	alumni.sort(key=lambda x: x.class_year, reverse=True)
 	members_list = [{"Sopranos":sopranos}, {"Altos":altos}, {"Tenors":tenors}, {"Basses":basses}]
 	return render(request, 'about/index.html', {"members_list": members_list, "alumni_list": alumni})
